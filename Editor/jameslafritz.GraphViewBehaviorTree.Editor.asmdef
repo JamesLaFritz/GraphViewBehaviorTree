@@ -1,10 +1,8 @@
 {
-    "name": "jameslafritz.[package-name].Editor.Tests",
-    "rootNamespace": "",
+    "name": "jameslafritz.GraphViewBehaviorTree.Editor",
+    "rootNamespace": "GraphViewBehaviorTree.Editor",
     "references": [
-        "GUID:d24feaeed76a1554499d78504aec6a30",
-        "GUID:19cd186980f000f4ebe5e1b962536ba9",
-        "GUID:5025990ec9fefe740b4c3eccb74098d7"
+        "GUID:0bfbb1bb60202024991fa3f551e4c375"
     ],
     "includePlatforms": [
         "Editor"

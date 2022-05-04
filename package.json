@@ -1,14 +1,14 @@
 {
-  "name": "com.james.lafritz.[package-name]",
+  "name": "com.james.lafritz.GraphViewBehaviorTree",
   "version": "1.0.0",
   "description": "Template",
-  "displayName": "[package-name]",
+  "displayName": "GraphViewBehaviorTree",
   "unity": "2021.3",
   "author": {
     "name": "James LaFritz",
     "url": "https://jameslafritz.com/"
   },
-  "changlogURL": "https://github.com/JamesLaFritz/[package-name]/CHANGELOG.md",
+  "changlogURL": "https://github.com/JamesLaFritz/GraphViewBehaviorTree/CHANGELOG.md",
   "dependencies": {
     "com.unity.cinemachine": "2.8.4",
     "com.unity.inputsystem": "1.3.0",
@@ -45,7 +45,7 @@
     "Attribute",
     "Inspector"
   ],
-  "licensesUrl": "https://github.com/JamesLaFritz/[package-name]/LICENSE.md",
+  "licensesUrl": "https://github.com/JamesLaFritz/GraphViewBehaviorTree/LICENSE.md",
   "samples": [
     {
       "displayName": "Samples 1",
