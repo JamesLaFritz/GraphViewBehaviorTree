@@ -1,0 +1,18 @@
+{
+    "name": "jameslafritz.[package-name].Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d24feaeed76a1554499d78504aec6a30"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
