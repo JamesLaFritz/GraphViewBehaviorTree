@@ -2,8 +2,14 @@ using UnityEngine;
 
 namespace GraphViewBehaviorTree
 {
+    /// <summary>
+    /// Base class for all nodes in the Behavior tree.
+    /// </summary>
     public abstract class Node : ScriptableObject
     {
+        /// <summary>
+        /// The states a node can be in.
+        /// </summary>
         public enum State
         {
             /// <summary>
@@ -26,10 +32,28 @@ namespace GraphViewBehaviorTree
 
         [SerializeField] private bool started;
 
+        /// <summary>
+        /// Runs when the Node first starts running.
+        /// Initialize the Node.
+        /// </summary>
         protected abstract void OnStart();
+
+        /// <summary>
+        /// Runs when the Node Stops.
+        /// Any Cleanup that the Node may need to do.
+        /// </summary>
         protected abstract void OnStop();
+
+        /// <summary>
+        /// Runs every Update of the Node.
+        /// </summary>
+        /// <returns>The State the Node is in once it finishes Updating.</returns>
         protected abstract State OnUpdate();
 
+        /// <summary>
+        /// Update the Node.
+        /// </summary>
+        /// <returns>The state that the Node is in.</returns>
         public State Update()
         {
             if (!started)
