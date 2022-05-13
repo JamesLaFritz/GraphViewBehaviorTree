@@ -17,7 +17,10 @@ namespace GraphViewBehaviorTree
             DebugLogNode log = ScriptableObject.CreateInstance<DebugLogNode>();
             log.message = "Testing 1,2,3.";
 
-            m_tree.rootNode = log;
+            RepeatNode loop = ScriptableObject.CreateInstance<RepeatNode>();
+            loop.child = log;
+
+            m_tree.rootNode = loop;
         }
 
         private void Update()
