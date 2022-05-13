@@ -7,7 +7,7 @@ using UnityEngine;
 namespace GraphViewBehaviorTree
 {
     /// <summary>
-    /// Action node that logs a message.
+    /// Action Node that logs a message.
     /// </summary>
     public class DebugLogNode : ActionNode
     {
