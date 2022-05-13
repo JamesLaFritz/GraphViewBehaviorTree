@@ -14,11 +14,20 @@ namespace GraphViewBehaviorTree
         {
             m_tree = ScriptableObject.CreateInstance<BehaviorTree>();
 
-            DebugLogNode log = ScriptableObject.CreateInstance<DebugLogNode>();
-            log.message = "Testing 1,2,3.";
+            DebugLogNode log1 = ScriptableObject.CreateInstance<DebugLogNode>();
+            log1.message = "Testing 1";
+            DebugLogNode log2 = ScriptableObject.CreateInstance<DebugLogNode>();
+            log2.message = "Testing 2";
+            DebugLogNode log3 = ScriptableObject.CreateInstance<DebugLogNode>();
+            log3.message = "Testing 3";
 
-            RepeatNode loop = ScriptableObject.CreateInstance<RepeatNode>();
-            loop.child = log;
+            CompositeNode sequence = ScriptableObject.CreateInstance<SequencerNode>();
+            sequence.children.Add(log1);
+            sequence.children.Add(log2);
+            sequence.children.Add(log3);
+
+            DecoratorNode loop = ScriptableObject.CreateInstance<RepeatNode>();
+            loop.child = sequence;
 
             m_tree.rootNode = loop;
         }
