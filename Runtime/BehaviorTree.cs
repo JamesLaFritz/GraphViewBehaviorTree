@@ -42,7 +42,7 @@ namespace GraphViewBehaviorTree
 
             if (m_hasRootNode)
             {
-                if (rootNode!.state == Node.State.Running)
+                if (treeState == Node.State.Running)
                     treeState = rootNode.Update();
             }
             else

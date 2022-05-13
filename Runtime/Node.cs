@@ -28,7 +28,7 @@ namespace GraphViewBehaviorTree
             Failure
         }
 
-        public State state = State.Running;
+        [SerializeField] private State state = State.Running;
 
         [SerializeField] private bool started;
 
