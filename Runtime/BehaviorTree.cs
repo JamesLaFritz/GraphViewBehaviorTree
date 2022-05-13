@@ -40,7 +40,15 @@ namespace GraphViewBehaviorTree
                 }
             }
 
-            treeState = m_hasRootNode ? rootNode.Update() : Node.State.Failure;
+            if (m_hasRootNode)
+            {
+                if (rootNode!.state == Node.State.Running)
+                    treeState = rootNode.Update();
+            }
+            else
+            {
+                treeState = Node.State.Failure;
+            }
 
             return treeState;
         }
