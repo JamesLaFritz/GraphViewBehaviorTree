@@ -59,12 +59,24 @@
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
-	  <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-      <ul>
-        <li><a href="#articles">Articles</a></li>
-      </ul>
+        <ul>
+            <li> Node Types </li>
+            <ul>
+                <li><a href="#decorator-node">Decorator Node</a></li>
+            </ul>
+            <ul>
+                <li><a href="#composite-node">Composite Node</a></li>
+            </ul>
+	        <ul>
+                <li><a href="#action-node">Action Node</a></li>
+            </ul>
+        </ul>
+	    <ul>
+            <li><a href="#built-with">Built With</a></li>
+        </ul>
+        <ul>
+            <li><a href="#articles">Articles</a></li>
+        </ul>
     </li>
     <li><a href="#license">License</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -80,6 +92,23 @@
 
 Behavior Tree using UI Builder, GraphView, and Scriptable Objects in Unity 2021.3
 
+Behavior Tree is an execution tree (uses the [Strategy pattern](https://blog.devgenius.io/strategy-pattern-in-unity-b82065aaa969)) and always starts with a Root Node. This will be so
+that the behavior tree knows where to start. Root Node has only one child. Now there are 3 basic main type of nodes
+Decorator, Composite Node and Action Node.
+Each Node can return one of three states Running, Success, or Failure.
+All nodes will be saved in Unity as Scriptable Objects. A Behavior tree will be a Scriptable Object containing all the
+Nodes in it.
+
+#### Decorator Node
+* Has one child and is capable of augmenting the return state of it's child. This uses the [Decorator
+pattern](https://blog.devgenius.io/the-decorator-pattern-in-unity-6791ab10b64).
+
+#### Composite Node
+* Has a list of children and is the control flow of the behavior tree like switch statements and for
+loops. There are 2 types Composite Nodes the Selector and Sequence. This uses the [Composite pattern](https://blog.devgenius.io/composite-pattern-in-unity-fc90e60c946f).
+
+#### Action Node
+* The Leaf of the tree, has no children, and is where all of the logic gets implemented.
 
 
 ### Built With
