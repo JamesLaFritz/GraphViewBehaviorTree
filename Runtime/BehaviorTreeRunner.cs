@@ -21,10 +21,17 @@ namespace GraphViewBehaviorTree
             DebugLogNode log3 = ScriptableObject.CreateInstance<DebugLogNode>();
             log3.message = "Testing 3";
 
+            ActionNode wait1 = ScriptableObject.CreateInstance<WaitNode>();
+            ActionNode wait2 = ScriptableObject.CreateInstance<WaitNode>();
+            ActionNode wait3 = ScriptableObject.CreateInstance<WaitNode>();
+
             CompositeNode sequence = ScriptableObject.CreateInstance<SequencerNode>();
             sequence.children.Add(log1);
+            sequence.children.Add(wait1);
             sequence.children.Add(log2);
+            sequence.children.Add(wait2);
             sequence.children.Add(log3);
+            sequence.children.Add(wait3);
 
             DecoratorNode loop = ScriptableObject.CreateInstance<RepeatNode>();
             loop.child = sequence;
