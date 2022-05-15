@@ -1,20 +1,22 @@
 using UnityEditor;
 using UnityEngine.UIElements;
 
-
-public class BehaviorTreeEditor : EditorWindow
+namespace GraphViewBehaviorTree.Editor
 {
-    [MenuItem("Window/Behavior Tree/Editor")]
-    public static void OpenTreeEditor()
+    public class BehaviorTreeEditor : EditorWindow
     {
-        GetWindow<BehaviorTreeEditor>("Behavior Tree Editor");
-    }
+        [MenuItem("Window/Behavior Tree/Editor")]
+        public static void OpenTreeEditor()
+        {
+            GetWindow<BehaviorTreeEditor>("Behavior Tree Editor");
+        }
 
-    public void CreateGUI()
-    {
-        VisualTreeAsset visualTree =
-            AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-                "Assets/GraphViewBehaviorTree/Editor/BehaviorTreeEditor.uxml");
-        visualTree.CloneTree(rootVisualElement);
+        public void CreateGUI()
+        {
+            VisualTreeAsset visualTree =
+                AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
+                    "Assets/GraphViewBehaviorTree/Editor/BehaviorTreeEditor.uxml");
+            visualTree.CloneTree(rootVisualElement);
+        }
     }
 }
