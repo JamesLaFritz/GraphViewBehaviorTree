@@ -90,6 +90,11 @@
 
 ![Product Name Screen Shot](Documentation~/Images/ScreenShot.png)
 
+I had code on sitting around on my hard drive for a Behavior Tree Editor That inspired me to create a bBehavior Tree Editor and write Articles about Behavior Tree and Using the Unity Editor UI Builder.
+It has been [Pointed Out](https://github.com/JamesLaFritz/GraphViewBehaviorTree/issues/1) to me very polite and professional that this code is actually from the KIWI Coder.
+
+[![The Kiwi Coder](https://thekiwicoder.com/wp-content/uploads/2020/02/site_logo.png)](https://thekiwicoder.com/)
+
 Behavior Tree using UI Builder, GraphView, and Scriptable Objects in Unity 2021.3
 
 Behavior Tree is an execution tree (uses the [Strategy pattern](https://blog.devgenius.io/strategy-pattern-in-unity-b82065aaa969)) and always starts with a Root Node. This will be so
@@ -141,8 +146,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* [Scribtable Object Game Events](https://blog.devgenius.io/scriptableobject-game-events-1f3401bbde72)
-* [Making The Inspector Look Better](https://blog.devgenius.io/making-the-inspector-look-better-175baf39ada0)
+[![The Kiwi Coder Behavior Tree Editor](https://thekiwicoder.com/wp-content/uploads/2021/07/behaviour_tree-2.jpg)](https://thekiwicoder.com/behaviour-tree-editor/)
+[![The Kiwi Coder](https://thekiwicoder.com/wp-content/uploads/2020/02/site_logo.png)](https://thekiwicoder.com/)
 
 
 <!--
