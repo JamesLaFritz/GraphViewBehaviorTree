@@ -9,6 +9,7 @@ namespace GraphViewBehaviorTree
     /// <summary>
     /// Action Node that logs a message.
     /// </summary>
+    [System.Serializable]
     public class DebugLogNode : ActionNode
     {
         /// <summary>

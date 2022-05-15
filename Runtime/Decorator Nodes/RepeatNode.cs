@@ -7,6 +7,7 @@ namespace GraphViewBehaviorTree
     /// <summary>
     /// Decorator Node, Returns State Running Regardless of the Child Nodes State.
     /// </summary>
+    [System.Serializable]
     public class RepeatNode : DecoratorNode
     {
         #region Overrides of Node

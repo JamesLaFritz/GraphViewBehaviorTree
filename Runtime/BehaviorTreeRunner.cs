@@ -2,6 +2,7 @@
 // 05-13-2022
 // James LaFritz
 
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GraphViewBehaviorTree
@@ -14,27 +15,35 @@ namespace GraphViewBehaviorTree
         {
             m_tree = ScriptableObject.CreateInstance<BehaviorTree>();
 
-            DebugLogNode log1 = ScriptableObject.CreateInstance<DebugLogNode>();
-            log1.message = "Testing 1";
-            DebugLogNode log2 = ScriptableObject.CreateInstance<DebugLogNode>();
-            log2.message = "Testing 2";
-            DebugLogNode log3 = ScriptableObject.CreateInstance<DebugLogNode>();
-            log3.message = "Testing 3";
+            DebugLogNode log1 = new DebugLogNode
+            {
+                message = "Testing 1"
+            };
+            DebugLogNode log2 = new DebugLogNode
+            {
+                message = "Testing 1"
+            };
+            DebugLogNode log3 = new DebugLogNode
+            {
+                message = "Testing 1"
+            };
 
-            ActionNode wait1 = ScriptableObject.CreateInstance<WaitNode>();
-            ActionNode wait2 = ScriptableObject.CreateInstance<WaitNode>();
-            ActionNode wait3 = ScriptableObject.CreateInstance<WaitNode>();
+            ActionNode wait1 = new WaitNode();
+            ActionNode wait2 = new WaitNode();
+            ActionNode wait3 = new WaitNode();
 
-            CompositeNode sequence = ScriptableObject.CreateInstance<SequencerNode>();
-            sequence.children.Add(log1);
-            sequence.children.Add(wait1);
-            sequence.children.Add(log2);
-            sequence.children.Add(wait2);
-            sequence.children.Add(log3);
-            sequence.children.Add(wait3);
+            CompositeNode sequence = new SequencerNode()
+            {
+                children = new List<Node>()
+                {
+                    log1, wait1, log2, wait2, log3, wait3
+                }
+            };
 
-            DecoratorNode loop = ScriptableObject.CreateInstance<RepeatNode>();
-            loop.child = sequence;
+            DecoratorNode loop = new RepeatNode()
+            {
+                child = sequence
+            };
 
             m_tree.rootNode = loop;
         }

@@ -8,6 +8,7 @@ namespace GraphViewBehaviorTree
     /// A Node that has one child and is capable of augmenting the return state of it's child.
     /// The Interface, Abstract members will be implemented in the individual Decorator Nodes.
     /// </summary>
+    [System.Serializable]
     public abstract class DecoratorNode : Node
     {
         public Node child;

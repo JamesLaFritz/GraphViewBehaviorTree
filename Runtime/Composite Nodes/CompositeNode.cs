@@ -10,6 +10,7 @@ namespace GraphViewBehaviorTree
     /// Has a list of children and is the control flow of the behavior tree like switch statements and for loops.
     /// There are 2 types Composite Nodes the Selector and Sequence node.
     /// </summary>
+    [System.Serializable]
     public abstract class CompositeNode : Node
     {
         public List<Node> children = new List<Node>();
