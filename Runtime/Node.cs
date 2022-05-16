@@ -7,7 +7,7 @@ namespace GraphViewBehaviorTree
     /// Base class for all nodes in the Behavior tree.
     /// </summary>
     [System.Serializable]
-    public abstract class Node
+    public abstract class Node : Object
     {
         /// <summary>
         /// The states a node can be in.
@@ -35,8 +35,6 @@ namespace GraphViewBehaviorTree
         [SerializeField] private bool started;
 
         public int nodeID;
-
-        public string name = "Node";
 
         /// <summary>
         /// Runs when the Node first starts running.
