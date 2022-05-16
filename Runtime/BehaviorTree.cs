@@ -2,6 +2,7 @@
 // 05-05-2022
 // James LaFritz
 
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GraphViewBehaviorTree
@@ -21,6 +22,11 @@ namespace GraphViewBehaviorTree
         /// The State the tree is in.
         /// </summary>
         public Node.State treeState = Node.State.Running;
+
+        /// <summary>
+        /// The Nodes that the tree has.
+        /// </summary>
+        public List<Node> nodes = new List<Node>();
 
         private bool m_hasRootNode;
 

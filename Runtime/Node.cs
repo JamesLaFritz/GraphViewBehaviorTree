@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Networking.Types;
 
 namespace GraphViewBehaviorTree
 {
@@ -32,6 +33,10 @@ namespace GraphViewBehaviorTree
         [SerializeField] private State state = State.Running;
 
         [SerializeField] private bool started;
+
+        public int nodeID;
+
+        public string name = "Node";
 
         /// <summary>
         /// Runs when the Node first starts running.

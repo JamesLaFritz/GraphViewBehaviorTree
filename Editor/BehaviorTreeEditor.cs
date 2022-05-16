@@ -5,6 +5,8 @@ namespace GraphViewBehaviorTree.Editor
 {
     public class BehaviorTreeEditor : EditorWindow
     {
+        private BehaviorTreeView m_treeView;
+
         [MenuItem("Window/Behavior Tree/Editor")]
         public static void OpenTreeEditor()
         {
@@ -17,6 +19,17 @@ namespace GraphViewBehaviorTree.Editor
                 AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
                     "Assets/GraphViewBehaviorTree/Editor/BehaviorTreeEditor.uxml");
             visualTree.CloneTree(rootVisualElement);
+
+            m_treeView = rootVisualElement.Q<BehaviorTreeView>();
+            rootVisualElement.Q<VisualElement>("InspectorView");
+        }
+
+        private void OnSelectionChange()
+        {
+            BehaviorTree tree = Selection.activeObject as BehaviorTree;
+            if (!tree) return;
+
+            m_treeView.PopulateView(tree);
         }
     }
 }
