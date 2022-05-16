@@ -6,10 +6,12 @@
     <GraphViewBehaviorTree.Editor.SplitView fixed-pane-initial-dimension="300" orientation="Horizontal">
         <ui:VisualElement name="left-panel">
             <ui:Label text="Inspector" display-tooltip-when-elided="true" />
+            <ui:VisualElement name="InspectorView" style="flex-grow: 1;" />
         </ui:VisualElement>
         <ui:VisualElement name="right-panel">
             <GraphViewBehaviorTree.Editor.BehaviorTreeView focusable="true">
                 <ui:Label text="Tree View" display-tooltip-when-elided="true" />
+                <ui:TextField picking-mode="Ignore" label="Tree Name" value="filler text" text="filler text" name="BehaviorTreeName" binding-path="m_Name" />
             </GraphViewBehaviorTree.Editor.BehaviorTreeView>
         </ui:VisualElement>
     </GraphViewBehaviorTree.Editor.SplitView>

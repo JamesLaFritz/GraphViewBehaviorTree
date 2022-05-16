@@ -1,4 +1,6 @@
 using UnityEditor;
+using UnityEditor.UIElements;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace GraphViewBehaviorTree.Editor
@@ -27,9 +29,21 @@ namespace GraphViewBehaviorTree.Editor
         private void OnSelectionChange()
         {
             BehaviorTree tree = Selection.activeObject as BehaviorTree;
-            if (!tree) return;
+            if (tree != null)
+            {
+                SerializedObject so = new SerializedObject(tree);
+                rootVisualElement.Bind(so);
+            }
+            else
+            {
+                rootVisualElement.Unbind();
 
-            m_treeView.PopulateView(tree);
+                TextField textField = rootVisualElement.Q<TextField>("BehaviorTreeName");
+                if (textField != null)
+                {
+                    textField.value = string.Empty;
+                }
+            }
         }
     }
 }
