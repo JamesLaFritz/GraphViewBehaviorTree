@@ -3,16 +3,13 @@
     <uie:Toolbar>
         <uie:ToolbarMenu display-tooltip-when-elided="true" text="Assets&#10;" />
     </uie:Toolbar>
-    <GraphViewBehaviorTree.Editor.SplitView fixed-pane-initial-dimension="300" orientation="Horizontal">
-        <ui:VisualElement name="left-panel">
+    <GraphViewBehaviorTree.Editor.SplitView fixed-pane-initial-dimension="200">
+        <ui:VisualElement name="LeftPane">
             <ui:Label text="Inspector" display-tooltip-when-elided="true" />
-            <ui:VisualElement name="InspectorView" style="flex-grow: 1;" />
         </ui:VisualElement>
-        <ui:VisualElement name="right-panel">
-            <GraphViewBehaviorTree.Editor.BehaviorTreeView focusable="true">
-                <ui:Label text="Tree View" display-tooltip-when-elided="true" />
-                <ui:TextField picking-mode="Ignore" label="Tree Name" value="filler text" text="filler text" name="BehaviorTreeName" binding-path="m_Name" readonly="true" />
-            </GraphViewBehaviorTree.Editor.BehaviorTreeView>
+        <ui:VisualElement name="RightPane">
+            <ui:Label text="Behavior Tree" display-tooltip-when-elided="true" />
+            <GraphViewBehaviorTree.Editor.BehaviorTreeView focusable="true" />
         </ui:VisualElement>
     </GraphViewBehaviorTree.Editor.SplitView>
 </ui:UXML>
