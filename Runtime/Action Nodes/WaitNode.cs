@@ -9,6 +9,7 @@ namespace GraphViewBehaviorTree
     /// <summary>
     /// Action Node that waits for a period of time before returning success.
     /// </summary>
+    [System.Serializable]
     public class WaitNode : ActionNode
     {
         /// <summary>
