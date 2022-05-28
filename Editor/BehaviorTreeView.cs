@@ -2,8 +2,12 @@
 // 05-15-2022
 // James LaFritz
 
+using System;
+using System.Reflection;
+using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 
 namespace GraphViewBehaviorTree.Editor
 {
@@ -36,6 +40,8 @@ namespace GraphViewBehaviorTree.Editor
         {
             m_tree = tree;
             DeleteElements(graphElements);
+
+            m_hasTree = tree != null;
             m_tree.nodes.ForEach(CreateNodeView);
         }
 
@@ -48,5 +54,44 @@ namespace GraphViewBehaviorTree.Editor
             BehaviorTreeNodeView nodeView = new BehaviorTreeNodeView(node);
             AddElement(nodeView);
         }
+
+        private void CreateNode(Type type)
+        {
+            if (!m_hasTree) return;
+
+            Node node = ScriptableObject.CreateInstance(type) as Node;
+            node.name = type.Name;
+            node.guid = GUID.Generate().ToString();
+
+            m_tree.nodes.Add(node);
+
+            CreateNodeView(node);
+
+            if (m_tree.rootNode == null)
+                m_tree.rootNode = node;
+
+            AssetDatabase.AddObjectToAsset(node, m_tree);
+            AssetDatabase.SaveAssets();
+        }
+
+        #region Overrides of GraphView
+
+        /// <inheritdoc />
+        public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+        {
+            TypeCache.TypeCollection types = TypeCache.GetTypesDerivedFrom<Node>();
+            foreach (Type type in types)
+            {
+                if (type.IsAbstract) continue;
+                evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}",
+                                      _ => CreateNode(type));
+            }
+
+            base.BuildContextualMenu(evt);
+        }
+
+        private void CreateActionNode(DropdownMenuAction obj) { }
+
+        #endregion
     }
 }
