@@ -39,10 +39,33 @@ namespace GraphViewBehaviorTree.Editor
         public void PopulateView(BehaviorTree tree)
         {
             m_tree = tree;
+
+            graphViewChanged -= OnGraphViewChanged;
             DeleteElements(graphElements);
+            graphViewChanged += OnGraphViewChanged;
 
             m_hasTree = tree != null;
             m_tree.nodes.ForEach(CreateNodeView);
+        }
+
+        /// <summary>
+        /// Hook into the Graph View Change to delete Nodes when the Node View Element is slated to be Removed.
+        /// </summary>
+        /// <param name="graphViewChange"><a href="https://docs.unity3d.com/2021.3/Documentation/ScriptReference/Experimental.GraphView.GraphViewChange.html">GraphViewChange</a></param>
+        /// <returns></returns>
+        private GraphViewChange OnGraphViewChanged(GraphViewChange graphViewChange)
+        {
+            if (graphViewChange.elementsToRemove != null)
+            {
+                foreach (GraphElement element in graphViewChange.elementsToRemove)
+                {
+                    BehaviorTreeNodeView nodeView = element as BehaviorTreeNodeView;
+                    if (nodeView == null) continue;
+                    DeleteNode(nodeView.node);
+                }
+            }
+
+            return graphViewChange;
         }
 
         /// <summary>
@@ -55,6 +78,10 @@ namespace GraphViewBehaviorTree.Editor
             AddElement(nodeView);
         }
 
+        /// <summary>
+        /// Create a new Node with a Node View.
+        /// </summary>
+        /// <param name="type">The Type of Node to create.</param>
         private void CreateNode(Type type)
         {
             if (!m_hasTree) return;
@@ -74,6 +101,30 @@ namespace GraphViewBehaviorTree.Editor
             AssetDatabase.SaveAssets();
         }
 
+        /// <summary>
+        /// Delete a Node from the tree.
+        /// </summary>
+        /// <param name="node">The Node to Delete.</param>
+        private void DeleteNode(Node node)
+        {
+            if (!m_hasTree) return;
+
+            m_tree.nodes.Remove(node);
+
+            if (m_tree.rootNode == node)
+            {
+                m_tree.rootNode = null;
+
+                if (m_tree.nodes.Count > 0)
+                {
+                    m_tree.rootNode = m_tree.nodes[0];
+                }
+            }
+
+            AssetDatabase.RemoveObjectFromAsset(node);
+            AssetDatabase.SaveAssets();
+        }
+
         #region Overrides of GraphView
 
         /// <inheritdoc />
@@ -89,8 +140,6 @@ namespace GraphViewBehaviorTree.Editor
 
             base.BuildContextualMenu(evt);
         }
-
-        private void CreateActionNode(DropdownMenuAction obj) { }
 
         #endregion
     }

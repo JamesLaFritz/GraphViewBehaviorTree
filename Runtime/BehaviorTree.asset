@@ -1,37 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4240661757895791322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6393085ea8384e5bb186aaea142bed2d, type: 3}
-  m_Name: RepeatNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: d23a276c65fb98546b9b071c1343fcab
-  child: {fileID: 0}
---- !u!114 &-565239197420118866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 187b4c814d8745dd891809af976622ac, type: 3}
-  m_Name: SequencerNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 0a416a40371e26547b0d31921288a03c
-  children: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,25 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6371a375614c15a896e2db4158a40c, type: 3}
   m_Name: BehaviorTree
   m_EditorClassIdentifier: 
-  rootNode: {fileID: -4240661757895791322}
+  rootNode: {fileID: 0}
   treeState: 0
-  nodes:
-  - {fileID: -4240661757895791322}
-  - {fileID: 6386541820823176810}
-  - {fileID: -565239197420118866}
---- !u!114 &6386541820823176810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 431c8572020b46eca6bb34110cbfe55b, type: 3}
-  m_Name: DebugLogNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 7890177eee3d07d429673c38ba04a09f
-  message: 
+  nodes: []

@@ -11,6 +11,8 @@ namespace GraphViewBehaviorTree.Editor
     {
         private Node m_node;
 
+        public Node node => m_node;
+
         public BehaviorTreeNodeView(Node node)
         {
             m_node = node;
