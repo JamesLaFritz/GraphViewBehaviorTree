@@ -6,7 +6,7 @@ namespace GraphViewBehaviorTree
     /// Base class for all nodes in the Behavior tree.
     /// </summary>
     [System.Serializable]
-    public abstract class Node
+    public abstract class Node : ScriptableObject
     {
         /// <summary>
         /// The states a node can be in.
@@ -29,9 +29,9 @@ namespace GraphViewBehaviorTree
             Failure
         }
 
-        private State m_state = State.Running;
+        [SerializeField] private State state = State.Running;
 
-        private bool m_started;
+        [SerializeField] bool started;
 
         public string guid;
 
@@ -59,19 +59,19 @@ namespace GraphViewBehaviorTree
         /// <returns>The state that the Node is in.</returns>
         public State Update()
         {
-            if (!m_started)
+            if (!started)
             {
                 OnStart();
-                m_started = true;
+                started = true;
             }
 
-            m_state = OnUpdate();
+            state = OnUpdate();
 
             // if the state is running the state is not failure or not success (in case I decide to add other states latter).
-            if (m_state != State.Failure && m_state != State.Success) return m_state;
+            if (state != State.Failure && state != State.Success) return state;
             OnStop();
-            m_started = false;
-            return m_state;
+            started = false;
+            return state;
         }
     }
 }
