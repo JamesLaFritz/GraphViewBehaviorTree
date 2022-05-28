@@ -11,6 +11,7 @@ namespace GraphViewBehaviorTree
     /// Behavior tree is an execution tree and always starts with a Root Node.
     /// </summary>
     [CreateAssetMenu(fileName = "BehaviorTree", menuName = "Behavior Tree")]
+    [System.Serializable]
     public class BehaviorTree : ScriptableObject
     {
         /// <summary>

@@ -7,11 +7,13 @@ using UnityEditor.Experimental.GraphView;
 
 namespace GraphViewBehaviorTree.Editor
 {
+    /// <summary>
+    /// A View for the Behavior Tree.
+    /// Can be used in the UI Builder.
+    /// </summary>
     public class BehaviorTreeView : GraphView
     {
         public new class UxmlFactory : UxmlFactory<BehaviorTreeView, UxmlTraits> { }
-
-        private int m_currentNodeId = 0;
 
         private BehaviorTree m_tree;
         private bool m_hasTree;
@@ -26,40 +28,25 @@ namespace GraphViewBehaviorTree.Editor
             this.AddManipulator(new RectangleSelector());
         }
 
+        /// <summary>
+        /// Populate the View wih the passed in tree
+        /// </summary>
+        /// <param name="tree">The tree to populate the View from</param>
         public void PopulateView(BehaviorTree tree)
         {
-            // Store the tree
             m_tree = tree;
-            // clear out anything that may have been created previously;
             DeleteElements(graphElements);
-            // loop through the nodes and create a new node.
-            m_tree.nodes.ForEach(n => CreateNodeView(n));
+            m_tree.nodes.ForEach(CreateNodeView);
         }
 
+        /// <summary>
+        /// Adds a Node View to the Tree View from the passed in Node.
+        /// </summary>
+        /// <param name="node">The Node to create a view for.</param>
         private void CreateNodeView(Node node)
         {
             BehaviorTreeNodeView nodeView = new BehaviorTreeNodeView(node);
             AddElement(nodeView);
-        }
-
-        public Node CreateNode<T>() where T : Node, new()
-        {
-            if (!m_hasTree) return null;
-
-            Node node = new T();
-            node.name = node.GetType().Name;
-            node.nodeID = m_currentNodeId++;
-
-            m_tree.nodes.Add(node);
-
-            return node;
-        }
-
-        public void DeleteNode(Node node)
-        {
-            if (!m_hasTree) return;
-
-            m_tree.nodes.Remove(node);
         }
     }
 }

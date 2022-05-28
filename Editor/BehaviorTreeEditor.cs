@@ -33,6 +33,8 @@ namespace GraphViewBehaviorTree.Editor
             {
                 SerializedObject so = new SerializedObject(tree);
                 rootVisualElement.Bind(so);
+                if (m_treeView != null)
+                    m_treeView.PopulateView(tree);
             }
             else
             {
