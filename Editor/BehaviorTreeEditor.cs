@@ -24,6 +24,8 @@ namespace GraphViewBehaviorTree.Editor
 
             m_treeView = rootVisualElement.Q<BehaviorTreeView>();
             rootVisualElement.Q<VisualElement>("InspectorView");
+
+            OnSelectionChange();
         }
 
         private void OnSelectionChange()
