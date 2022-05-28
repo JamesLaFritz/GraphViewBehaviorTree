@@ -2,6 +2,8 @@
 // 05-15-2022
 // James LaFritz
 
+using UnityEngine;
+
 namespace GraphViewBehaviorTree.Editor
 {
     /// <summary>
@@ -18,6 +20,21 @@ namespace GraphViewBehaviorTree.Editor
             m_node = node;
             if (m_node == null) return;
             base.title = m_node.GetType().Name;
+            viewDataKey = m_node.guid;
+            style.left = m_node.nodeGraphPosition.x;
+            style.top = m_node.nodeGraphPosition.y;
         }
+
+        #region Overrides of Node
+
+        /// <inheritdoc />
+        public override void SetPosition(Rect newPos)
+        {
+            base.SetPosition(newPos);
+            m_node.nodeGraphPosition.x = newPos.xMin;
+            m_node.nodeGraphPosition.y = newPos.yMin;
+        }
+
+        #endregion
     }
 }

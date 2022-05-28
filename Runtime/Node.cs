@@ -35,6 +35,8 @@ namespace GraphViewBehaviorTree
 
         public string guid;
 
+        public Vector2 nodeGraphPosition;
+
         /// <summary>
         /// Runs when the Node first starts running.
         /// Initialize the Node.
