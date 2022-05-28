@@ -9,48 +9,35 @@ namespace GraphViewBehaviorTree
 {
     public class BehaviorTreeRunner : MonoBehaviour
     {
-        [SerializeField] private BehaviorTree m_tree;
+        [SerializeField] private BehaviorTree tree;
 
         private void Start()
         {
-            m_tree = ScriptableObject.CreateInstance<BehaviorTree>();
+            tree = ScriptableObject.CreateInstance<BehaviorTree>();
 
-            DebugLogNode log1 = new DebugLogNode
-            {
-                message = "Testing 1"
-            };
-            DebugLogNode log2 = new DebugLogNode
-            {
-                message = "Testing 1"
-            };
-            DebugLogNode log3 = new DebugLogNode
-            {
-                message = "Testing 1"
-            };
+            DebugLogNode log1 = ScriptableObject.CreateInstance<DebugLogNode>();
+            log1.message = "Testing 1";
+            DebugLogNode log2 = ScriptableObject.CreateInstance<DebugLogNode>();
+            log2.message = "Testing 2";
+            DebugLogNode log3 = ScriptableObject.CreateInstance<DebugLogNode>();
+            log3.message = "Testing 3";
 
-            ActionNode wait1 = new WaitNode();
-            ActionNode wait2 = new WaitNode();
-            ActionNode wait3 = new WaitNode();
+            ActionNode wait1 = ScriptableObject.CreateInstance<WaitNode>();
+            ActionNode wait2 = ScriptableObject.CreateInstance<WaitNode>();
+            ActionNode wait3 = ScriptableObject.CreateInstance<WaitNode>();
 
-            CompositeNode sequence = new SequencerNode()
-            {
-                children = new List<Node>()
-                {
-                    log1, wait1, log2, wait2, log3, wait3
-                }
-            };
+            CompositeNode sequence = ScriptableObject.CreateInstance<SequencerNode>();
+            sequence.children = new List<Node> { log1, wait1, log2, wait2, log3, wait3 };
 
-            DecoratorNode loop = new RepeatNode()
-            {
-                child = sequence
-            };
+            DecoratorNode loop = ScriptableObject.CreateInstance<RepeatNode>();
+            loop.child = sequence;
 
-            m_tree.rootNode = loop;
+            tree.rootNode = loop;
         }
 
         private void Update()
         {
-            m_tree.Update();
+            tree.Update();
         }
     }
 }
