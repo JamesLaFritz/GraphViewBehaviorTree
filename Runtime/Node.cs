@@ -5,7 +5,8 @@ namespace GraphViewBehaviorTree
     /// <summary>
     /// Base class for all nodes in the Behavior tree.
     /// </summary>
-    public abstract class Node : Object
+    [System.Serializable]
+    public abstract class Node
     {
         /// <summary>
         /// The states a node can be in.
