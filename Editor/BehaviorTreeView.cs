@@ -3,7 +3,8 @@
 // James LaFritz
 
 using System;
-using System.Reflection;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.Experimental.GraphView;
@@ -139,6 +140,15 @@ namespace GraphViewBehaviorTree.Editor
             }
 
             base.BuildContextualMenu(evt);
+        }
+
+        /// <inheritdoc />
+        public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
+        {
+            return ports.ToList()!.Where(endPort =>
+                                             endPort.direction != startPort.direction &&
+                                             endPort.node != startPort.node &&
+                                             endPort.portType == startPort.portType).ToList();
         }
 
         #endregion

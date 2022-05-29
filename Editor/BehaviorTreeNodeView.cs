@@ -2,6 +2,7 @@
 // 05-15-2022
 // James LaFritz
 
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace GraphViewBehaviorTree.Editor
@@ -15,6 +16,9 @@ namespace GraphViewBehaviorTree.Editor
 
         public Node node => m_node;
 
+        public Port input;
+        public Port output;
+
         public BehaviorTreeNodeView(Node node)
         {
             m_node = node;
@@ -23,6 +27,45 @@ namespace GraphViewBehaviorTree.Editor
             viewDataKey = m_node.guid;
             style.left = m_node.nodeGraphPosition.x;
             style.top = m_node.nodeGraphPosition.y;
+
+            CreateInputPorts();
+            CreateOutputPorts();
+        }
+
+        /// <summary>
+        /// Create an Input port for all Node Types
+        /// </summary>
+        private void CreateInputPorts()
+        {
+            input = InstantiatePort(Orientation.Vertical, Direction.Input,
+                                    Port.Capacity.Multi, typeof(Node));
+            if (input == null) return;
+            input.portName = "";
+            inputContainer.Add(input);
+        }
+
+        /// <summary>
+        /// Create Output Port based on the Node Type.
+        /// </summary>
+        private void CreateOutputPorts()
+        {
+            switch (m_node)
+            {
+                case ActionNode:
+                    break;
+                case CompositeNode:
+                    output = InstantiatePort(Orientation.Vertical, Direction.Output,
+                                             Port.Capacity.Multi, typeof(Node));
+                    break;
+                case DecoratorNode:
+                    output = InstantiatePort(Orientation.Vertical, Direction.Output,
+                                             Port.Capacity.Single, typeof(Node));
+                    break;
+            }
+
+            if (output == null) return;
+            output.portName = "";
+            outputContainer.Add(output);
         }
 
         #region Overrides of Node
