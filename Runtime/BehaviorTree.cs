@@ -3,6 +3,7 @@
 // James LaFritz
 
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 namespace GraphViewBehaviorTree
@@ -27,7 +28,12 @@ namespace GraphViewBehaviorTree
         /// <summary>
         /// The Nodes that the tree has.
         /// </summary>
-        public List<Node> nodes = new List<Node>();
+        private List<Node> m_nodes = new List<Node>();
+
+        public List<Node> GetNodes()
+        {
+            return m_nodes;
+        }
 
         private bool m_hasRootNode;
 
@@ -58,6 +64,43 @@ namespace GraphViewBehaviorTree
             }
 
             return treeState;
+        }
+
+        /// <summary>
+        /// Create a new Node and add it to the nodes.
+        /// </summary>
+        /// <param name="type">The Type of Node to create.</param>
+        public Node CreateNode(System.Type type)
+        {
+            Node node = CreateInstance(type) as Node;
+            node.name = type.Name;
+            node.guid = GUID.Generate().ToString();
+
+            m_nodes.Add(node);
+
+            if (rootNode == null)
+                rootNode = node;
+
+            return node;
+        }
+
+        /// <summary>
+        /// Delete a Node from the tree.
+        /// </summary>
+        /// <param name="node">The Node to Delete.</param>
+        public void DeleteNode(Node node)
+        {
+            m_nodes.Remove(node);
+
+            if (rootNode == node)
+            {
+                rootNode = null;
+
+                if (m_nodes.Count > 0)
+                {
+                    rootNode = m_nodes[0];
+                }
+            }
         }
     }
 }

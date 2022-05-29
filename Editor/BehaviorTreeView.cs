@@ -8,7 +8,6 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.Experimental.GraphView;
-using UnityEngine;
 
 namespace GraphViewBehaviorTree.Editor
 {
@@ -46,7 +45,8 @@ namespace GraphViewBehaviorTree.Editor
             graphViewChanged += OnGraphViewChanged;
 
             m_hasTree = tree != null;
-            m_tree.nodes.ForEach(CreateNodeView);
+            if (!m_hasTree) return;
+            m_tree.GetNodes().ForEach(CreateNodeView);
         }
 
         /// <summary>
@@ -87,16 +87,9 @@ namespace GraphViewBehaviorTree.Editor
         {
             if (!m_hasTree) return;
 
-            Node node = ScriptableObject.CreateInstance(type) as Node;
-            node.name = type.Name;
-            node.guid = GUID.Generate().ToString();
-
-            m_tree.nodes.Add(node);
+            Node node = m_tree.CreateNode(type);
 
             CreateNodeView(node);
-
-            if (m_tree.rootNode == null)
-                m_tree.rootNode = node;
 
             AssetDatabase.AddObjectToAsset(node, m_tree);
             AssetDatabase.SaveAssets();
@@ -110,17 +103,7 @@ namespace GraphViewBehaviorTree.Editor
         {
             if (!m_hasTree) return;
 
-            m_tree.nodes.Remove(node);
-
-            if (m_tree.rootNode == node)
-            {
-                m_tree.rootNode = null;
-
-                if (m_tree.nodes.Count > 0)
-                {
-                    m_tree.rootNode = m_tree.nodes[0];
-                }
-            }
+            m_tree.DeleteNode(node);
 
             AssetDatabase.RemoveObjectFromAsset(node);
             AssetDatabase.SaveAssets();
