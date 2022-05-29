@@ -56,10 +56,22 @@ namespace GraphViewBehaviorTree
         /// <returns>The State the Node is in once it finishes Updating.</returns>
         protected abstract State OnUpdate();
 
+        /// <summary>
+        /// Add the child node to this node.
+        /// </summary>
+        /// <param name="childNode">The Node to add as a Child.</param>
         public virtual void AddChild(Node childNode) { }
 
+        /// <summary>
+        /// Remove a Child from the Node.
+        /// </summary>
+        /// <param name="childNode">The Child to remove.</param>
         public virtual void RemoveChild(Node childNode) { }
 
+        /// <summary>
+        /// Get a list of children the node contains.
+        /// </summary>
+        /// <returns>A list of children Nodes.</returns>
         public virtual List<Node> GetChildren()
         {
             List<Node> children = new List<Node>();

@@ -28,7 +28,7 @@ namespace GraphViewBehaviorTree
         /// <summary>
         /// The Nodes that the tree has.
         /// </summary>
-        private List<Node> m_nodes = new List<Node>();
+        [SerializeField] List<Node> m_nodes = new List<Node>();
 
         public List<Node> GetNodes()
         {
@@ -103,6 +103,11 @@ namespace GraphViewBehaviorTree
             }
         }
 
+        /// <summary>
+        /// Add a child node to the parent.
+        /// </summary>
+        /// <param name="parent">The parent Node.</param>
+        /// <param name="child">The Node to add to the parent.</param>
         public void AddChild(Node parent, Node child)
         {
             if (!m_nodes.Contains(parent)) return;
@@ -114,6 +119,11 @@ namespace GraphViewBehaviorTree
             m_nodes.Add(child);
         }
 
+        /// <summary>
+        /// Remove a node from the parent.
+        /// </summary>
+        /// <param name="parent">The parent Node.</param>
+        /// <param name="child">The Node to remove from the parent.</param>
         public void RemoveChild(Node parent, Node child)
         {
             if (!m_nodes.Contains(parent)) return;
@@ -121,6 +131,11 @@ namespace GraphViewBehaviorTree
             m_nodes[m_nodes.IndexOf(parent)].RemoveChild(child);
         }
 
+        /// <summary>
+        /// Get a list of children from the parent.
+        /// </summary>
+        /// <param name="parent">The node to get the children from</param>
+        /// <returns>A list of children Nodes that the parent contains.</returns>
         public List<Node> GetChildren(Node parent)
         {
             return !m_nodes.Contains(parent)
