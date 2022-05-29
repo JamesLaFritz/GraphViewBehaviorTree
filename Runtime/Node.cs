@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace GraphViewBehaviorTree
@@ -54,6 +55,17 @@ namespace GraphViewBehaviorTree
         /// </summary>
         /// <returns>The State the Node is in once it finishes Updating.</returns>
         protected abstract State OnUpdate();
+
+        public virtual void AddChild(Node childNode) { }
+
+        public virtual void RemoveChild(Node childNode) { }
+
+        public virtual List<Node> GetChildren()
+        {
+            List<Node> children = new List<Node>();
+
+            return children;
+        }
 
         /// <summary>
         /// Update the Node.

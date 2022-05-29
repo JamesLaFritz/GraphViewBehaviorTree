@@ -22,15 +22,19 @@ namespace GraphViewBehaviorTree
             DebugLogNode log3 = ScriptableObject.CreateInstance<DebugLogNode>();
             log3.message = "Testing 3";
 
-            ActionNode wait1 = ScriptableObject.CreateInstance<WaitNode>();
-            ActionNode wait2 = ScriptableObject.CreateInstance<WaitNode>();
-            ActionNode wait3 = ScriptableObject.CreateInstance<WaitNode>();
+            Node wait1 = ScriptableObject.CreateInstance<WaitNode>();
+            Node wait2 = ScriptableObject.CreateInstance<WaitNode>();
+            Node wait3 = ScriptableObject.CreateInstance<WaitNode>();
 
-            CompositeNode sequence = ScriptableObject.CreateInstance<SequencerNode>();
-            sequence.children = new List<Node> { log1, wait1, log2, wait2, log3, wait3 };
+            Node sequence = ScriptableObject.CreateInstance<SequencerNode>();
+            sequence.AddChild(log1);
+            sequence.AddChild(wait1);
+            sequence.AddChild(wait2);
+            sequence.AddChild(log3);
+            sequence.AddChild(wait3);
 
-            DecoratorNode loop = ScriptableObject.CreateInstance<RepeatNode>();
-            loop.child = sequence;
+            Node loop = ScriptableObject.CreateInstance<RepeatNode>();
+            loop.AddChild(sequence);
 
             tree.rootNode = loop;
         }

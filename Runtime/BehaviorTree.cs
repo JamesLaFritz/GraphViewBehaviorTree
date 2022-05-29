@@ -102,5 +102,30 @@ namespace GraphViewBehaviorTree
                 }
             }
         }
+
+        public void AddChild(Node parent, Node child)
+        {
+            if (!m_nodes.Contains(parent)) return;
+
+            m_nodes[m_nodes.IndexOf(parent)].AddChild(child);
+
+            if (m_nodes.Contains(child)) return;
+
+            m_nodes.Add(child);
+        }
+
+        public void RemoveChild(Node parent, Node child)
+        {
+            if (!m_nodes.Contains(parent)) return;
+
+            m_nodes[m_nodes.IndexOf(parent)].RemoveChild(child);
+        }
+
+        public List<Node> GetChildren(Node parent)
+        {
+            return !m_nodes.Contains(parent)
+                ? new List<Node>()
+                : m_nodes[m_nodes.IndexOf(parent)].GetChildren();
+        }
     }
 }
