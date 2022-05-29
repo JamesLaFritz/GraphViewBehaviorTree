@@ -47,23 +47,51 @@ namespace GraphViewBehaviorTree.Editor
             m_hasTree = tree != null;
             if (!m_hasTree) return;
             m_tree.GetNodes().ForEach(CreateNodeView);
+
+            foreach (Edge edge in from node in m_tree.GetNodes()
+                                  let parentView = GetNodeByGuid(node.guid) as BehaviorTreeNodeView
+                                  from child in m_tree.GetChildren(node)
+                                  let childView = GetNodeByGuid(child.guid) as BehaviorTreeNodeView
+                                  select parentView.output.ConnectTo(childView.input))
+            {
+                AddElement(edge);
+            }
         }
 
         /// <summary>
         /// Hook into the Graph View Change to delete Nodes when the Node View Element is slated to be Removed.
         /// </summary>
         /// <param name="graphViewChange"><a href="https://docs.unity3d.com/2021.3/Documentation/ScriptReference/Experimental.GraphView.GraphViewChange.html">GraphViewChange</a></param>
-        /// <returns></returns>
         private GraphViewChange OnGraphViewChanged(GraphViewChange graphViewChange)
         {
             if (graphViewChange.elementsToRemove != null)
             {
                 foreach (GraphElement element in graphViewChange.elementsToRemove)
                 {
-                    BehaviorTreeNodeView nodeView = element as BehaviorTreeNodeView;
-                    if (nodeView == null) continue;
-                    DeleteNode(nodeView.node);
+                    switch (element)
+                    {
+                        case BehaviorTreeNodeView nodeView:
+                            DeleteNode(nodeView.node);
+                            break;
+                        case Edge edge:
+                        {
+                            BehaviorTreeNodeView parentView = edge.output.node as BehaviorTreeNodeView;
+                            BehaviorTreeNodeView childView = edge.input.node as BehaviorTreeNodeView;
+                            m_tree.RemoveChild(parentView.node, childView.node);
+                            break;
+                        }
+                    }
                 }
+            }
+
+            if (graphViewChange.edgesToCreate == null || !m_hasTree) return graphViewChange;
+
+            foreach (Edge edge in graphViewChange.edgesToCreate)
+            {
+                BehaviorTreeNodeView parentView = edge.output.node as BehaviorTreeNodeView;
+                BehaviorTreeNodeView childView = edge.input.node as BehaviorTreeNodeView;
+
+                m_tree.AddChild(parentView.node, childView.node);
             }
 
             return graphViewChange;
