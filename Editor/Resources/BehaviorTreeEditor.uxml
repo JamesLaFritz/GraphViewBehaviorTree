@@ -1,0 +1,17 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/GraphViewBehaviorTree/Editor/Resources/BehaviorTreeEditor.uss?fileID=7433441132597879392&amp;guid=4e96985bfa33cbe45813e0a9dfb406c9&amp;type=3#BehaviorTreeEditor" />
+    <uie:Toolbar>
+        <uie:ToolbarMenu display-tooltip-when-elided="true" text="Assets&#10;" />
+    </uie:Toolbar>
+    <GraphViewBehaviorTree.Editor.SplitView fixed-pane-initial-dimension="300">
+        <ui:VisualElement name="LeftPane">
+            <ui:Label text="Inspector" display-tooltip-when-elided="true" />
+            <ui:IMGUIContainer name="InspectorView" />
+        </ui:VisualElement>
+        <ui:VisualElement name="RightPane">
+            <ui:TextField picking-mode="Ignore" label="Behavior Tree Name" text="filler text" binding-path="m_Name" readonly="true" name="BehaviorTreeName" focusable="false" />
+            <uie:PropertyField label="Root Node" binding-path="rootNode" style="flex-grow: 0; height: auto;" />
+            <GraphViewBehaviorTree.Editor.BehaviorTreeView focusable="true" />
+        </ui:VisualElement>
+    </GraphViewBehaviorTree.Editor.SplitView>
+</ui:UXML>
