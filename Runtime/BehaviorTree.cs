@@ -18,17 +18,17 @@ namespace GraphViewBehaviorTree
         /// <summary>
         /// The Node to start the Behavior tree.
         /// </summary>
-        public Node rootNode;
+        [HideInInspector] public Node rootNode;
 
         /// <summary>
         /// The State the tree is in.
         /// </summary>
-        public Node.State treeState = Node.State.Running;
+        [HideInInspector] public Node.State treeState = Node.State.Running;
 
         /// <summary>
         /// The Nodes that the tree has.
         /// </summary>
-        [SerializeField] List<Node> m_nodes = new List<Node>();
+        [SerializeField, HideInInspector] List<Node> m_nodes = new List<Node>();
 
         public List<Node> GetNodes()
         {
