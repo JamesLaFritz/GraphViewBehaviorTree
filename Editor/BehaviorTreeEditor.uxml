@@ -6,6 +6,7 @@
     <GraphViewBehaviorTree.Editor.SplitView fixed-pane-initial-dimension="200">
         <ui:VisualElement name="LeftPane">
             <ui:Label text="Inspector" display-tooltip-when-elided="true" />
+            <ui:IMGUIContainer name="InspectorView" />
         </ui:VisualElement>
         <ui:VisualElement name="RightPane">
             <ui:TextField picking-mode="Ignore" label="Editing Behavior Tree" value="filler text" text="filler text" binding-path="m_Name" readonly="true" />

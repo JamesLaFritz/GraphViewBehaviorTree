@@ -1,6 +1,5 @@
 using UnityEditor;
 using UnityEditor.UIElements;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace GraphViewBehaviorTree.Editor
@@ -8,6 +7,8 @@ namespace GraphViewBehaviorTree.Editor
     public class BehaviorTreeEditor : EditorWindow
     {
         private BehaviorTreeView m_treeView;
+        private IMGUIContainer m_inspectorView;
+        private UnityEditor.Editor m_editor;
 
         [MenuItem("Window/Behavior Tree/Editor")]
         public static void OpenTreeEditor()
@@ -23,7 +24,8 @@ namespace GraphViewBehaviorTree.Editor
             visualTree.CloneTree(rootVisualElement);
 
             m_treeView = rootVisualElement.Q<BehaviorTreeView>();
-            rootVisualElement.Q<VisualElement>("InspectorView");
+            m_inspectorView = rootVisualElement.Q<IMGUIContainer>("InspectorView");
+            m_treeView.OnNodeSelected = OnNodeSelectionChange;
 
             OnSelectionChange();
         }
@@ -48,6 +50,14 @@ namespace GraphViewBehaviorTree.Editor
                     textField.value = string.Empty;
                 }
             }
+        }
+
+        private void OnNodeSelectionChange(Node node)
+        {
+            m_inspectorView.Clear();
+            DestroyImmediate(m_editor);
+            m_editor = UnityEditor.Editor.CreateEditor(node);
+            m_inspectorView.onGUIHandler = () => { m_editor.OnInspectorGUI(); };
         }
     }
 }

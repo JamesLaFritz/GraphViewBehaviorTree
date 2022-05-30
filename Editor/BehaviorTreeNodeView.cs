@@ -2,6 +2,7 @@
 // 05-15-2022
 // James LaFritz
 
+using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ namespace GraphViewBehaviorTree.Editor
     public class BehaviorTreeNodeView : UnityEditor.Experimental.GraphView.Node
     {
         private Node m_node;
+
+        public Action<Node> OnNodeSelected;
 
         public Node node => m_node;
 
@@ -76,6 +79,17 @@ namespace GraphViewBehaviorTree.Editor
             base.SetPosition(newPos);
             m_node.nodeGraphPosition.x = newPos.xMin;
             m_node.nodeGraphPosition.y = newPos.yMin;
+        }
+
+        #endregion
+
+        #region Overrides of GraphElement
+
+        /// <inheritdoc />
+        public override void OnSelected()
+        {
+            OnNodeSelected?.Invoke(m_node);
+            base.OnSelected();
         }
 
         #endregion

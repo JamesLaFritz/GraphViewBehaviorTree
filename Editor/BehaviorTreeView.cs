@@ -19,6 +19,8 @@ namespace GraphViewBehaviorTree.Editor
     {
         public new class UxmlFactory : UxmlFactory<BehaviorTreeView, UxmlTraits> { }
 
+        public Action<Node> OnNodeSelected;
+
         private BehaviorTree m_tree;
         private bool m_hasTree;
 
@@ -104,6 +106,7 @@ namespace GraphViewBehaviorTree.Editor
         private void CreateNodeView(Node node)
         {
             BehaviorTreeNodeView nodeView = new BehaviorTreeNodeView(node);
+            nodeView.OnNodeSelected = OnNodeSelected;
             AddElement(nodeView);
         }
 
