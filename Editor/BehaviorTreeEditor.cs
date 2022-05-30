@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.Callbacks;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
@@ -14,6 +15,22 @@ namespace GraphViewBehaviorTree.Editor
         public static void OpenTreeEditor()
         {
             GetWindow<BehaviorTreeEditor>("Behavior Tree Editor");
+        }
+
+        /// <summary>
+        /// Use Unity Editor Call Back On Open Asset.
+        /// </summary>
+        /// <returns>True if this method handled the asset. Else return false.</returns>
+        [OnOpenAsset]
+        public static bool OnOpenAsset(int instanceID, int line)
+        {
+            if (Selection.activeObject is BehaviorTree)
+            {
+                OpenTreeEditor();
+                return true;
+            }
+
+            return false;
         }
 
         public void CreateGUI()
