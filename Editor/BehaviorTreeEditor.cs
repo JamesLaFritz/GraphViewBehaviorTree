@@ -25,7 +25,7 @@ namespace GraphViewBehaviorTree.Editor
 
             m_treeView = rootVisualElement.Q<BehaviorTreeView>();
             m_inspectorView = rootVisualElement.Q<IMGUIContainer>("InspectorView");
-            m_treeView.OnNodeSelected = OnNodeSelectionChange;
+            m_treeView.onNodeSelected = OnNodeSelectionChange;
 
             OnSelectionChange();
         }

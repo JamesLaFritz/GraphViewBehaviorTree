@@ -5,6 +5,7 @@
 using System;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace GraphViewBehaviorTree.Editor
 {
@@ -15,7 +16,9 @@ namespace GraphViewBehaviorTree.Editor
     {
         private Node m_node;
 
-        public Action<Node> OnNodeSelected;
+        public Action<Node> onNodeSelected;
+
+        public Action<Node> onSetRootNode;
 
         public Node node => m_node;
 
@@ -81,6 +84,13 @@ namespace GraphViewBehaviorTree.Editor
             m_node.nodeGraphPosition.y = newPos.yMin;
         }
 
+        /// <inheritdoc />
+        public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+        {
+            evt.menu.AppendAction($"Set as Root Node", _ => onSetRootNode?.Invoke(m_node));
+            base.BuildContextualMenu(evt);
+        }
+
         #endregion
 
         #region Overrides of GraphElement
@@ -88,7 +98,7 @@ namespace GraphViewBehaviorTree.Editor
         /// <inheritdoc />
         public override void OnSelected()
         {
-            OnNodeSelected?.Invoke(m_node);
+            onNodeSelected?.Invoke(m_node);
             base.OnSelected();
         }
 
