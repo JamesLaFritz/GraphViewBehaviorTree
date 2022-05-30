@@ -142,5 +142,13 @@ namespace GraphViewBehaviorTree
                 ? new List<Node>()
                 : m_nodes[m_nodes.IndexOf(parent)].GetChildren();
         }
+
+        public BehaviorTree Clone()
+        {
+            BehaviorTree tree = Instantiate<BehaviorTree>(this);
+            tree.rootNode = rootNode.Clone();
+
+            return tree;
+        }
     }
 }

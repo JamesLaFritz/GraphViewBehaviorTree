@@ -36,6 +36,15 @@ namespace GraphViewBehaviorTree
             return children;
         }
 
+        /// <inheritdoc />
+        public override Node Clone()
+        {
+            CompositeNode node = Instantiate(this);
+            node.children = children.ConvertAll(c => c.Clone());
+
+            return node;
+        }
+
         #endregion
     }
 }

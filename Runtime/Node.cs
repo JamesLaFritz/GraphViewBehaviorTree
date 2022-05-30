@@ -79,6 +79,11 @@ namespace GraphViewBehaviorTree
             return children;
         }
 
+        public virtual Node Clone()
+        {
+            return Instantiate(this);
+        }
+
         /// <summary>
         /// Update the Node.
         /// </summary>

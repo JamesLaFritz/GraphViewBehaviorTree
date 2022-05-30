@@ -37,6 +37,15 @@ namespace GraphViewBehaviorTree
             return new List<Node>() { child };
         }
 
+        /// <inheritdoc />
+        public override Node Clone()
+        {
+            DecoratorNode node = Instantiate(this);
+            node.child = child.Clone();
+
+            return node;
+        }
+
         #endregion
     }
 }
