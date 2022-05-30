@@ -5,7 +5,7 @@
 namespace GraphViewBehaviorTree
 {
     /// <summary>
-    /// Decorator Node, Returns State Running Regardless of the Child Nodes State.
+    /// <see cref="DecoratorNode"/> returns State Running Regardless of the Child Nodes State.
     /// </summary>
     [System.Serializable]
     public class RepeatNode : DecoratorNode

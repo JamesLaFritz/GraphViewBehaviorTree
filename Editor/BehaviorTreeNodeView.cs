@@ -10,21 +10,41 @@ using UnityEngine.UIElements;
 namespace GraphViewBehaviorTree.Editor
 {
     /// <summary>
-    /// A View for Behavior Tree Nodes, based on the Graph View Node
+    /// A View for Behavior Tree <see cref="Node"/>, derived from <see cref="UnityEditor.Experimental.GraphView.Node"/>
     /// </summary>
     public class BehaviorTreeNodeView : UnityEditor.Experimental.GraphView.Node
     {
         private Node m_node;
 
+        /// <summary>
+        /// Notifies the Observers that a <see cref="Node"/> has been Selected and pass the <see cref="Node"/> that was selected.
+        /// </summary>
         public Action<Node> onNodeSelected;
 
+        /// <summary>
+        /// Notifies Observers that the set root node has been selected. Pass the <see cref="Node"/> that was selected to be set as the root node.
+        /// </summary>
         public Action<Node> onSetRootNode;
 
+        /// <summary>
+        /// The <see cref="Node"/> that is associate with this view.
+        /// </summary>
         public Node node => m_node;
 
+        /// <summary>
+        /// The Input <see cref="UnityEditor.Experimental.GraphView.Port"/>.
+        /// </summary>
         public Port input;
+
+        /// <summary>
+        /// The Output <see cref="UnityEditor.Experimental.GraphView.Port"/>.
+        /// </summary>
         public Port output;
 
+        /// <summary>
+        /// Create a New Node View.
+        /// </summary>
+        /// <param name="node"><see cref="Node"/> that is associated with this view.</param>
         public BehaviorTreeNodeView(Node node)
         {
             m_node = node;

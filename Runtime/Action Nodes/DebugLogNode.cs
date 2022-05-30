@@ -7,7 +7,7 @@ using UnityEngine;
 namespace GraphViewBehaviorTree
 {
     /// <summary>
-    /// Action Node that logs a message.
+    /// <see cref="ActionNode"/> that logs a message.
     /// </summary>
     [System.Serializable]
     public class DebugLogNode : ActionNode
@@ -15,7 +15,7 @@ namespace GraphViewBehaviorTree
         /// <summary>
         /// The Message to Log.
         /// </summary>
-        public string message;
+        [SerializeField] private string message;
 
         #region Overrides of Node
 

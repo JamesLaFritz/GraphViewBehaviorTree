@@ -34,8 +34,14 @@ namespace GraphViewBehaviorTree
 
         [SerializeField, HideInInspector] bool started;
 
+        /// <summary>
+        /// The GUID of the node view, used to get the Node View that this Node is associated with.
+        /// </summary>
         [HideInInspector] public string guid;
 
+        /// <summary>
+        /// The Position in the Behavior Tree View that this Node is at.
+        /// </summary>
         [HideInInspector] public Vector2 nodeGraphPosition;
 
         /// <summary>
@@ -79,6 +85,10 @@ namespace GraphViewBehaviorTree
             return children;
         }
 
+        /// <summary>
+        /// Clone the Node.
+        /// </summary>
+        /// <returns>A Clone of the Node.</returns>
         public virtual Node Clone()
         {
             return Instantiate(this);

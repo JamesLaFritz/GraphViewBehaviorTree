@@ -5,7 +5,7 @@
 namespace GraphViewBehaviorTree
 {
     /// <summary>
-    /// The Leaf of the tree, has no children, and is where all of the logic gets implemented.
+    /// A <see cref="Node"/> that has no children, is the Leaf of the tree, and is where all of the logic gets implemented.
     /// The Interface, Abstract members will be implemented in the individual Action Nodes.
     /// </summary>
     [System.Serializable]

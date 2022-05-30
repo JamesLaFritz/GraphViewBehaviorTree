@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 namespace GraphViewBehaviorTree.Editor
 {
+    /// <inheritdoc />
     public class SplitView : TwoPaneSplitView
     {
         public new class UxmlFactory : UxmlFactory<SplitView, UxmlTraits> { }

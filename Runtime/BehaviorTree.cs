@@ -9,7 +9,7 @@ using UnityEngine;
 namespace GraphViewBehaviorTree
 {
     /// <summary>
-    /// Behavior tree is an execution tree and always starts with a Root Node.
+    /// Behavior tree is an execution tree requires that the Root Node be set, derived from <see cref="UnityEngine.ScriptableObject"/>
     /// </summary>
     [CreateAssetMenu(fileName = "BehaviorTree", menuName = "Behavior Tree")]
     [System.Serializable]
@@ -30,6 +30,9 @@ namespace GraphViewBehaviorTree
         /// </summary>
         [SerializeField, HideInInspector] List<Node> m_nodes = new List<Node>();
 
+        /// <summary>
+        /// Get all of the Nodes in the Tree.
+        /// </summary>
         public List<Node> GetNodes()
         {
             return m_nodes;
@@ -143,6 +146,10 @@ namespace GraphViewBehaviorTree
                 : m_nodes[m_nodes.IndexOf(parent)].GetChildren();
         }
 
+        /// <summary>
+        /// Clone the Tree.
+        /// </summary>
+        /// <returns>A Clone of the tree</returns>
         public BehaviorTree Clone()
         {
             BehaviorTree tree = Instantiate<BehaviorTree>(this);

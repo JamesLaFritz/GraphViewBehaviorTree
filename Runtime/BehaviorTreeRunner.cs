@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace GraphViewBehaviorTree
 {
+    /// <inheritdoc />
     public class BehaviorTreeRunner : MonoBehaviour
     {
         [SerializeField] private BehaviorTree tree;

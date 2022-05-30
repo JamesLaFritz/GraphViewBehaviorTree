@@ -8,12 +8,14 @@ using UnityEngine;
 namespace GraphViewBehaviorTree
 {
     /// <summary>
-    /// Has a list of children and is the control flow of the behavior tree like switch statements and for loops.
-    /// There are 2 types Composite Nodes the Selector and Sequence node.
+    /// <see cref="Node"/> that has a list of children.
     /// </summary>
     [System.Serializable]
     public abstract class CompositeNode : Node
     {
+        /// <summary>
+        /// The Children that this <see cref="Node"/> contains.
+        /// </summary>
         [SerializeField, HideInInspector] protected List<Node> children = new List<Node>();
 
         #region Overrides of Node

@@ -7,7 +7,7 @@ using UnityEngine;
 namespace GraphViewBehaviorTree
 {
     /// <summary>
-    /// Composite Node - Runs all of the children in Sequence.
+    /// <see cref="CompositeNode"/> - Runs all of the children in Sequence, by the order in the list of children.
     /// If one of the children fails the node will stop running and return failure.
     /// Returns Success if all of the children nodes Succeed.
     /// </summary>

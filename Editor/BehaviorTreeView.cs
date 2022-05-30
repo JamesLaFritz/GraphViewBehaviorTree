@@ -12,18 +12,24 @@ using UnityEditor.Experimental.GraphView;
 namespace GraphViewBehaviorTree.Editor
 {
     /// <summary>
-    /// A View for the Behavior Tree.
+    /// A View for the Behavior Tree, derived from <see cref="UnityEditor.Experimental.GraphView.GraphView"/>
     /// Can be used in the UI Builder.
     /// </summary>
     public class BehaviorTreeView : GraphView
     {
         public new class UxmlFactory : UxmlFactory<BehaviorTreeView, UxmlTraits> { }
 
+        /// <summary>
+        /// Notifies the Observers that a <see cref="Node"/> has been Selected and pass the <see cref="Node"/> that was selected.
+        /// </summary>
         public Action<Node> onNodeSelected;
 
         private BehaviorTree m_tree;
         private bool m_hasTree;
 
+        /// <summary>
+        /// Creates a new <see cref="BehaviorTreeView"/>.
+        /// </summary>
         public BehaviorTreeView()
         {
             style.flexGrow = 1;
@@ -37,7 +43,7 @@ namespace GraphViewBehaviorTree.Editor
         /// <summary>
         /// Populate the View wih the passed in tree
         /// </summary>
-        /// <param name="tree">The tree to populate the View from</param>
+        /// <param name="tree">The <see cref="BehaviorTree"/> to populate the View from</param>
         public void PopulateView(BehaviorTree tree)
         {
             m_tree = tree;
@@ -100,9 +106,9 @@ namespace GraphViewBehaviorTree.Editor
         }
 
         /// <summary>
-        /// Adds a Node View to the Tree View from the passed in Node.
+        /// Adds a <see cref="BehaviorTreeNodeView"/> from the passed in Node.
         /// </summary>
-        /// <param name="node">The Node to create a view for.</param>
+        /// <param name="node">The <see cref="Node"/> to create a view for.</param>
         private void CreateNodeView(Node node)
         {
             BehaviorTreeNodeView nodeView = new BehaviorTreeNodeView(node);
@@ -113,7 +119,7 @@ namespace GraphViewBehaviorTree.Editor
         }
 
         /// <summary>
-        /// Create a new Node with a Node View.
+        /// Create a new <see cref="Node"/> with a Node View.
         /// </summary>
         /// <param name="type">The Type of Node to create.</param>
         private void CreateNode(Type type)
@@ -129,9 +135,9 @@ namespace GraphViewBehaviorTree.Editor
         }
 
         /// <summary>
-        /// Delete a Node from the tree.
+        /// Delete a <see cref="Node"/> from the tree.
         /// </summary>
-        /// <param name="node">The Node to Delete.</param>
+        /// <param name="node">The <see cref="Node"/> to Delete.</param>
         private void DeleteNode(Node node)
         {
             if (!m_hasTree) return;

@@ -7,7 +7,7 @@ using UnityEngine;
 namespace GraphViewBehaviorTree
 {
     /// <summary>
-    /// Action Node that waits for a period of time before returning success.
+    /// <see cref="ActionNode"/> that waits for a period of time before returning success.
     /// </summary>
     [System.Serializable]
     public class WaitNode : ActionNode
@@ -15,7 +15,7 @@ namespace GraphViewBehaviorTree
         /// <summary>
         /// The Duration that the Node waits before returning success.
         /// </summary>
-        [Range(0, 10)] public float duration = 1f;
+        [Range(0, 10)] [SerializeField] private float duration = 1f;
 
         private float m_startTime;
 
