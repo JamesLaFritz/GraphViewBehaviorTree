@@ -15,7 +15,7 @@ namespace GraphViewBehaviorTree
         /// <summary>
         /// The Duration that the Node waits before returning success.
         /// </summary>
-        public float duration = 1f;
+        [Range(0, 10)] public float duration = 1f;
 
         private float m_startTime;
 

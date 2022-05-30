@@ -14,7 +14,7 @@ namespace GraphViewBehaviorTree
     [System.Serializable]
     public abstract class CompositeNode : Node
     {
-        [SerializeField] protected List<Node> children = new List<Node>();
+        [SerializeField, HideInInspector] protected List<Node> children = new List<Node>();
 
         #region Overrides of Node
 

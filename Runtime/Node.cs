@@ -30,13 +30,13 @@ namespace GraphViewBehaviorTree
             Failure
         }
 
-        [SerializeField] private State state = State.Running;
+        [SerializeField, HideInInspector] private State state = State.Running;
 
-        [SerializeField] bool started;
+        [SerializeField, HideInInspector] bool started;
 
-        public string guid;
+        [HideInInspector] public string guid;
 
-        public Vector2 nodeGraphPosition;
+        [HideInInspector] public Vector2 nodeGraphPosition;
 
         /// <summary>
         /// Runs when the Node first starts running.

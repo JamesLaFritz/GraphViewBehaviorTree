@@ -14,7 +14,7 @@ namespace GraphViewBehaviorTree
     [System.Serializable]
     public abstract class DecoratorNode : Node
     {
-        [SerializeField] protected Node child;
+        [SerializeField, HideInInspector] protected Node child;
 
         #region Overrides of Node
 
