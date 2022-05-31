@@ -93,7 +93,11 @@ namespace GraphViewBehaviorTree.Editor
             m_inspectorView.Clear();
             DestroyImmediate(m_editor);
             m_editor = UnityEditor.Editor.CreateEditor(node);
-            m_inspectorView.onGUIHandler = () => { m_editor.OnInspectorGUI(); };
+            m_inspectorView.onGUIHandler = () =>
+            {
+                if (m_editor.target)
+                    m_editor.OnInspectorGUI();
+            };
         }
     }
 }

@@ -38,6 +38,14 @@ namespace GraphViewBehaviorTree.Editor
             this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
+
+            Undo.undoRedoPerformed += UndoRedoPerformed;
+        }
+
+        private void UndoRedoPerformed()
+        {
+            PopulateView(m_tree);
+            AssetDatabase.SaveAssets();
         }
 
         /// <summary>
@@ -127,11 +135,14 @@ namespace GraphViewBehaviorTree.Editor
             if (!m_hasTree) return;
 
             Node node = m_tree.CreateNode(type);
-
             CreateNodeView(node);
+            Undo.RecordObject(m_tree, "Behavior Tree (Create Node)");
 
-            AssetDatabase.AddObjectToAsset(node, m_tree);
+            AssetDatabase.AddObjectToAsset(m_tree, m_tree);
             AssetDatabase.SaveAssets();
+
+            Undo.RegisterCreatedObjectUndo(node, "Behavior Tree (Create Node)");
+            EditorUtility.SetDirty(node);
         }
 
         /// <summary>
@@ -143,9 +154,11 @@ namespace GraphViewBehaviorTree.Editor
             if (!m_hasTree) return;
 
             m_tree.DeleteNode(node);
+            Undo.RecordObject(m_tree, "Behavior Tree (Delete Node)");
 
-            AssetDatabase.RemoveObjectFromAsset(node);
+            Undo.DestroyObjectImmediate(node);
             AssetDatabase.SaveAssets();
+            EditorUtility.SetDirty(m_tree);
         }
 
         #region Overrides of GraphView

@@ -3,6 +3,7 @@
 // James LaFritz
 
 using System;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -119,8 +120,10 @@ namespace GraphViewBehaviorTree.Editor
         public override void SetPosition(Rect newPos)
         {
             base.SetPosition(newPos);
+            Undo.RecordObject(m_node, "Behavior Tree (Set Position)");
             m_node.nodeGraphPosition.x = newPos.xMin;
             m_node.nodeGraphPosition.y = newPos.yMin;
+            EditorUtility.SetDirty(m_node);
         }
 
         /// <inheritdoc />
