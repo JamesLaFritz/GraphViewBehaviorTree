@@ -45,7 +45,7 @@ namespace GraphViewBehaviorTree.Editor
         /// Create a New Node View.
         /// </summary>
         /// <param name="node"><see cref="Node"/> that is associated with this view.</param>
-        public BehaviorTreeNodeView(Node node)
+        public BehaviorTreeNodeView(Node node) : base("Assets/GraphViewBehaviorTree/Editor/Resources/BehaviorTreeNodeView.uxml")
         {
             m_node = node;
             if (m_node == null) return;
@@ -56,6 +56,23 @@ namespace GraphViewBehaviorTree.Editor
 
             CreateInputPorts();
             CreateOutputPorts();
+            SetupClasses();
+        }
+
+        private void SetupClasses()
+        {
+            switch (m_node)
+            {
+                case ActionNode:
+                    AddToClassList("action");
+                    break;
+                case CompositeNode:
+                    AddToClassList("composite");
+                    break;
+                case DecoratorNode:
+                    AddToClassList("decorator");
+                    break;
+            }
         }
 
         /// <summary>
@@ -67,6 +84,7 @@ namespace GraphViewBehaviorTree.Editor
                                     Port.Capacity.Multi, typeof(Node));
             if (input == null) return;
             input.portName = "";
+            input.name = "input-port";
             inputContainer.Add(input);
         }
 
@@ -91,6 +109,7 @@ namespace GraphViewBehaviorTree.Editor
 
             if (output == null) return;
             output.portName = "";
+            output.name = "output-port";
             outputContainer.Add(output);
         }
 
