@@ -102,6 +102,17 @@ namespace GraphViewBehaviorTree
             return Instantiate(this);
         }
 
+        public virtual void ResetNode()
+        {
+            if (started)
+            {
+                OnStop();
+                started = false;
+            }
+
+            state = State.Running;
+        }
+
         /// <summary>
         /// Update the Node.
         /// </summary>

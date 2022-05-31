@@ -16,13 +16,16 @@ namespace GraphViewBehaviorTree
         protected override void OnStart() { }
 
         /// <inheritdoc />
-        protected override void OnStop() { }
+        protected override void OnStop()
+        {
+            ResetNode();
+        }
 
         /// <inheritdoc />
         protected override State OnUpdate()
         {
-            child.Update();
-            return State.Running;
+            state = child.Update();
+            return state;
         }
 
         #endregion

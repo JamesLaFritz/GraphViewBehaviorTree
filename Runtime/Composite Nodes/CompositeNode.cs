@@ -47,6 +47,17 @@ namespace GraphViewBehaviorTree
             return node;
         }
 
+        /// <inheritdoc />
+        public override void ResetNode()
+        {
+            foreach (Node child in children)
+            {
+                child.ResetNode();
+            }
+
+            base.ResetNode();
+        }
+
         #endregion
     }
 }
