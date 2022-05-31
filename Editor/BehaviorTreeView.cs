@@ -67,8 +67,10 @@ namespace GraphViewBehaviorTree.Editor
 
             foreach (Edge edge in from node in m_tree.GetNodes()
                                   let parentView = GetNodeByGuid(node.guid) as BehaviorTreeNodeView
+                                  where parentView is { output: { } }
                                   from child in m_tree.GetChildren(node)
                                   let childView = GetNodeByGuid(child.guid) as BehaviorTreeNodeView
+                                  where childView is { input: { } }
                                   select parentView.output.ConnectTo(childView.input))
             {
                 AddElement(edge);
