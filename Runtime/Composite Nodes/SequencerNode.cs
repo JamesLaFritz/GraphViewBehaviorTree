@@ -29,7 +29,7 @@ namespace GraphViewBehaviorTree
         /// <inheritdoc />
         protected override State OnUpdate()
         {
-            if (children is { Count: >= 1 })
+            if (children is { Count: >= 1 } && m_current < children.Count)
                 return children[m_current]!.Update() switch
                 {
                     State.Running => State.Running,
@@ -37,6 +37,14 @@ namespace GraphViewBehaviorTree
                     State.Success => ++m_current == children.Count ? State.Success : State.Running,
                     _ => State.Failure
                 };
+
+            if (children is { Count: >= 1 })
+            {
+                Debug.LogWarning("Something went wrong! Sequencer Node has gone out of range");
+                m_current = children.Count - 1;
+                return State.Running;
+            }
+
             Debug.LogWarning("Sequencer Node has no children.");
             return State.Failure;
         }
