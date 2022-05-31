@@ -103,14 +103,29 @@ namespace GraphViewBehaviorTree.Editor
                 }
             }
 
-            if (graphViewChange.edgesToCreate == null || !m_hasTree) return graphViewChange;
-
-            foreach (Edge edge in graphViewChange.edgesToCreate)
+            if (graphViewChange.edgesToCreate != null && m_hasTree)
             {
-                BehaviorTreeNodeView parentView = edge.output.node as BehaviorTreeNodeView;
-                BehaviorTreeNodeView childView = edge.input.node as BehaviorTreeNodeView;
+                foreach (Edge edge in graphViewChange.edgesToCreate)
+                {
+                    BehaviorTreeNodeView parentView = edge.output.node as BehaviorTreeNodeView;
+                    BehaviorTreeNodeView childView = edge.input.node as BehaviorTreeNodeView;
 
-                m_tree.AddChild(parentView.node, childView.node);
+                    m_tree.AddChild(parentView.node, childView.node);
+                }
+            }
+
+            if (graphViewChange.movedElements != null)
+            {
+                foreach (BehaviorTreeNodeView parentNodeView
+                         in from movedElement in graphViewChange.movedElements
+                            let movedNode = movedElement as BehaviorTreeNodeView
+                            where movedNode is { input: { connections: { } } }
+                            from edge in movedNode.input.connections
+                            where edge.output is { node: BehaviorTreeNodeView }
+                            select edge.output?.node as BehaviorTreeNodeView)
+                {
+                    parentNodeView?.SortChildren();
+                }
             }
 
             return graphViewChange;

@@ -114,6 +114,19 @@ namespace GraphViewBehaviorTree.Editor
             outputContainer.Add(output);
         }
 
+        public void SortChildren()
+        {
+            CompositeNode composite = node as CompositeNode;
+
+            if (composite != null)
+                composite.GetChildren().Sort(SortByHorizontalPosition);
+        }
+
+        private int SortByHorizontalPosition(Node node1, Node node2)
+        {
+            return node1.nodeGraphPosition.x < node2.nodeGraphPosition.x ? -1 : 1;
+        }
+
         #region Overrides of Node
 
         /// <inheritdoc />
