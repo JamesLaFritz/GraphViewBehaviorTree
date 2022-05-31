@@ -146,5 +146,10 @@ namespace GraphViewBehaviorTree.Editor
                     m_editor.OnInspectorGUI();
             };
         }
+
+        public void OnInspectorUpdate()
+        {
+            m_treeView?.UpdateNodeStates();
+        }
     }
 }

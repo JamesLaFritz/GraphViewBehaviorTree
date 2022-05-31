@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <Style src="project://database/Assets/GraphViewBehaviorTree/Editor/Resources/BehaviorTreeNodeView.uss?fileID=7433441132597879392&amp;guid=80713c49fd6a5b444af8050c3f60ad07&amp;type=3#BehaviorTreeNodeView" />
+    <ui:VisualElement name="node-state" picking-mode="Ignore" class="node-state" />
     <ui:VisualElement name="node-border">
         <ui:VisualElement name="contents">
             <ui:VisualElement name="top">

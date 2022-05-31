@@ -116,7 +116,7 @@ namespace GraphViewBehaviorTree.Editor
 
         public void SortChildren()
         {
-            CompositeNode composite = node as CompositeNode;
+            CompositeNode composite = m_node as CompositeNode;
 
             if (composite != null)
                 composite.GetChildren().Sort(SortByHorizontalPosition);
@@ -125,6 +125,29 @@ namespace GraphViewBehaviorTree.Editor
         private int SortByHorizontalPosition(Node node1, Node node2)
         {
             return node1.nodeGraphPosition.x < node2.nodeGraphPosition.x ? -1 : 1;
+        }
+
+        public void UpdateState()
+        {
+            RemoveFromClassList("running");
+            RemoveFromClassList("success");
+            RemoveFromClassList("failure");
+            switch (m_node.state)
+            {
+                case Node.State.Running:
+                    if (m_node.IsStarted)
+                    {
+                        AddToClassList("running");
+                    }
+
+                    break;
+                case Node.State.Success:
+                    AddToClassList("success");
+                    break;
+                case Node.State.Failure:
+                    AddToClassList("failure");
+                    break;
+            }
         }
 
         #region Overrides of Node

@@ -181,6 +181,14 @@ namespace GraphViewBehaviorTree.Editor
             EditorUtility.SetDirty(m_tree);
         }
 
+        public void UpdateNodeStates()
+        {
+            foreach (BehaviorTreeNodeView nodeView in nodes.OfType<BehaviorTreeNodeView>())
+            {
+                nodeView.UpdateState();
+            }
+        }
+
         #region Overrides of GraphView
 
         /// <inheritdoc />

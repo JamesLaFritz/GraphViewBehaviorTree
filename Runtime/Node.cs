@@ -30,9 +30,17 @@ namespace GraphViewBehaviorTree
             Failure
         }
 
-        [SerializeField, HideInInspector] private State state = State.Running;
+        /// <summary>
+        /// The State the Node is in.
+        /// </summary>
+        [SerializeField, HideInInspector] public State state = State.Running;
 
         [SerializeField, HideInInspector] bool started;
+
+        /// <summary>
+        /// Has the node started.
+        /// </summary>
+        public bool IsStarted => started;
 
         /// <summary>
         /// The GUID of the node view, used to get the Node View that this Node is associated with.

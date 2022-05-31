@@ -6,6 +6,18 @@
     flex-direction: column-reverse;
 }
 
+#node-state {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
 #selection-border {
     border-width: 0;
     border-radius: 8px;
@@ -192,65 +204,14 @@
     background-color: rgba(0, 21, 35, 0.8);
 }
 
-.fail #divider {
-    background-color: rgba(32, 11, 11, 0.8);
-    border-color: rgba(32, 11, 11, 0.8);
-}
-
-.fail #input {
-    background-color: rgba(73, 0, 0, 0.8);
-}
-
-.fail #output {
-    background-color: rgba(73, 0, 0, 0.8);
-}
-
-.fail #title {
+.failure #node-state {
     background-color: rgba(101, 0, 0, 0.8);
 }
 
-.fail #description {
-    background-color: rgba(101, 0, 0, 0.8);
-}
-
-.running #divider {
-    background-color: rgba(255, 123, 0, 0.8);
-    border-color: rgba(255, 123, 0, 0.8);
-}
-
-.running #input {
-    background-color: rgba(255, 149, 0, 0.8);
-}
-
-.running #output {
-    background-color: rgba(255, 170, 0, 0.8);
-}
-
-.running #title {
-    background-color: rgba(255, 149, 0, 0.8);
-}
-
-.running #description {
+.running #node-state {
     background-color: rgba(255, 136, 0, 0.8);
 }
 
-.pass #divider {
-    background-color: rgba(0, 66, 27, 0.8);
-    border-color: rgba(0, 66, 27, 0.8);
-}
-
-.pass #input {
-    background-color: rgba(0, 83, 34, 0.8);
-}
-
-.pass #output {
-    background-color: rgba(0, 83, 34, 0.8);
-}
-
-.pass #title {
-    background-color: rgba(0, 75, 31, 0.8);
-}
-
-.pass #description {
+.success #node-state {
     background-color: rgba(0, 75, 31, 0.8);
 }
