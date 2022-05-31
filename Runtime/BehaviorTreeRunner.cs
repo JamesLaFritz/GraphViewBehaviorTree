@@ -9,7 +9,7 @@ namespace GraphViewBehaviorTree
     /// <inheritdoc />
     public class BehaviorTreeRunner : MonoBehaviour
     {
-        [SerializeField] private BehaviorTree tree;
+        [SerializeField] public BehaviorTree tree;
 
         private bool m_hasTree;
 

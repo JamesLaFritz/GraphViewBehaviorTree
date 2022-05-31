@@ -1,6 +1,8 @@
+using System;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.UIElements;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace GraphViewBehaviorTree.Editor
@@ -56,6 +58,36 @@ namespace GraphViewBehaviorTree.Editor
             OnSelectionChange();
         }
 
+        private void OnEnable()
+        {
+            EditorApplication.playModeStateChanged -= OnplayModeStateChanged;
+            EditorApplication.playModeStateChanged += OnplayModeStateChanged;
+        }
+
+        private void OnDisable()
+        {
+            EditorApplication.playModeStateChanged -= OnplayModeStateChanged;
+        }
+
+        private void OnplayModeStateChanged(PlayModeStateChange obj)
+        {
+            switch (obj)
+            {
+                case PlayModeStateChange.EnteredEditMode:
+                    OnSelectionChange();
+                    break;
+                case PlayModeStateChange.ExitingEditMode:
+                    break;
+                case PlayModeStateChange.EnteredPlayMode:
+                    OnSelectionChange();
+                    break;
+                case PlayModeStateChange.ExitingPlayMode:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(obj), obj, null);
+            }
+        }
+
         /// <summary>
         /// Called whenever the selection has changed.
         ///
@@ -64,22 +96,37 @@ namespace GraphViewBehaviorTree.Editor
         private void OnSelectionChange()
         {
             BehaviorTree tree = Selection.activeObject as BehaviorTree;
+            if (tree == null)
+            {
+                if (Selection.activeGameObject)
+                {
+                    BehaviorTreeRunner treeRunner = Selection.activeGameObject.GetComponent<BehaviorTreeRunner>();
+                    if (treeRunner)
+                    {
+                        tree = treeRunner.tree;
+                    }
+                }
+            }
+
             if (tree != null)
             {
-                SerializedObject so = new SerializedObject(tree);
-                rootVisualElement.Bind(so);
-                if (m_treeView != null)
-                    m_treeView.PopulateView(tree);
-            }
-            else
-            {
-                rootVisualElement.Unbind();
-
-                TextField textField = rootVisualElement.Q<TextField>("BehaviorTreeName");
-                if (textField != null)
+                if (Application.isPlaying || AssetDatabase.CanOpenAssetInEditor(tree.GetInstanceID()))
                 {
-                    textField.value = string.Empty;
+                    SerializedObject so = new SerializedObject(tree);
+                    rootVisualElement.Bind(so);
+                    if (m_treeView != null)
+                        m_treeView.PopulateView(tree);
+
+                    return;
                 }
+            }
+
+            rootVisualElement.Unbind();
+
+            TextField textField = rootVisualElement.Q<TextField>("BehaviorTreeName");
+            if (textField != null)
+            {
+                textField.value = string.Empty;
             }
         }
 

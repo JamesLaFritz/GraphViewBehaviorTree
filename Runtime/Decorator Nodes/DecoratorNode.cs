@@ -37,7 +37,7 @@ namespace GraphViewBehaviorTree
         /// <inheritdoc />
         public override List<Node> GetChildren()
         {
-            return new List<Node>() { child };
+            return new List<Node> { child };
         }
 
         /// <inheritdoc />

@@ -8,6 +8,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine.UIElements;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine;
 
 namespace GraphViewBehaviorTree.Editor
 {
@@ -60,7 +61,7 @@ namespace GraphViewBehaviorTree.Editor
             DeleteElements(graphElements);
             graphViewChanged += OnGraphViewChanged;
 
-            m_hasTree = tree != null;
+            m_hasTree = m_tree != null;
             if (!m_hasTree) return;
             m_tree.GetNodes().ForEach(CreateNodeView);
 
@@ -138,7 +139,9 @@ namespace GraphViewBehaviorTree.Editor
             CreateNodeView(node);
             Undo.RecordObject(m_tree, "Behavior Tree (Create Node)");
 
-            AssetDatabase.AddObjectToAsset(m_tree, m_tree);
+            if (Application.isPlaying) return;
+
+            AssetDatabase.AddObjectToAsset(node, m_tree);
             AssetDatabase.SaveAssets();
 
             Undo.RegisterCreatedObjectUndo(node, "Behavior Tree (Create Node)");
