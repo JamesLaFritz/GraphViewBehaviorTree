@@ -147,13 +147,25 @@ namespace GraphViewBehaviorTree
         }
 
         /// <summary>
+        /// Traverse the node and run the Action.
+        /// </summary>
+        public void Traverse(Node node, System.Action<Node> visitor)
+        {
+            if (!node) return;
+            visitor?.Invoke(node);
+            node.GetChildren()?.ForEach((n) => Traverse(n, visitor));
+        }
+
+        /// <summary>
         /// Clone the Tree.
         /// </summary>
         /// <returns>A Clone of the tree</returns>
         public BehaviorTree Clone()
         {
-            BehaviorTree tree = Instantiate<BehaviorTree>(this);
+            BehaviorTree tree = Instantiate(this);
             tree.rootNode = rootNode.Clone();
+            tree.m_nodes = new List<Node>();
+            Traverse(tree.rootNode, (n) => tree.m_nodes.Add(n));
 
             return tree;
         }
