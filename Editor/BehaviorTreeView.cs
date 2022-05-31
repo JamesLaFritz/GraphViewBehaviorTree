@@ -33,7 +33,7 @@ namespace GraphViewBehaviorTree.Editor
         public BehaviorTreeView()
         {
             style.flexGrow = 1;
-            Insert(0, new GridBackground());
+            Insert(0, new GridBackground() { name = "grid_background" });
             this.AddManipulator(new ContentZoomer());
             this.AddManipulator(new ContentDragger());
             this.AddManipulator(new SelectionDragger());

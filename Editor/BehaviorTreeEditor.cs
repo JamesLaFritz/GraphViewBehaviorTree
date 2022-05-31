@@ -1,6 +1,5 @@
 using UnityEditor;
 using UnityEditor.Callbacks;
-using UnityEditor.Experimental;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
@@ -46,9 +45,9 @@ namespace GraphViewBehaviorTree.Editor
         /// </summary>
         public void CreateGUI()
         {
-            VisualTreeAsset visualTree =
-                EditorResources.Load<VisualTreeAsset>("BehaviorTreeEditor.uxml");
-            visualTree.CloneTree(rootVisualElement);
+            //VisualTreeAsset visualTree = Resources.Load<VisualTreeAsset>("BehaviorTreeEditor.uxml");
+            VisualTreeAsset vt = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/GraphViewBehaviorTree/Editor/Resources/BehaviorTreeEditor.uxml");
+            vt.CloneTree(rootVisualElement);
 
             m_treeView = rootVisualElement.Q<BehaviorTreeView>();
             m_inspectorView = rootVisualElement.Q<IMGUIContainer>("InspectorView");
