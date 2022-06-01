@@ -132,6 +132,9 @@ namespace GraphViewBehaviorTree.Editor
             RemoveFromClassList("running");
             RemoveFromClassList("success");
             RemoveFromClassList("failure");
+
+            if (!Application.isPlaying) return;
+
             switch (m_node.state)
             {
                 case Node.State.Running:
