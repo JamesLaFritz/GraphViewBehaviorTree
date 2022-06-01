@@ -176,6 +176,7 @@ namespace GraphViewBehaviorTree
                 int nodeIndex = m_nodes.IndexOf(n);
                 foreach (int childIndex in m_nodes[nodeIndex]?.GetChildren().Select(c => m_nodes.IndexOf(c)))
                 {
+                    tree.m_nodes[nodeIndex].RemoveChild(m_nodes[childIndex]);
                     tree.AddChild(tree.m_nodes[nodeIndex], tree.m_nodes[childIndex]);
                 }
             });
