@@ -35,19 +35,19 @@ namespace GraphViewBehaviorTree
         /// <inheritdoc />
         protected override void OnStart()
         {
-            if (string.IsNullOrEmpty(onStopMessage)) Debug.Log(onStopMessage);
+            if (!string.IsNullOrEmpty(onStopMessage)) Debug.Log(onStopMessage);
         }
 
         /// <inheritdoc />
         protected override void OnStop()
         {
-            if (string.IsNullOrEmpty(onStartMessage)) Debug.Log(onStartMessage);
+            if (!string.IsNullOrEmpty(onStartMessage)) Debug.Log(onStartMessage);
         }
 
         /// <inheritdoc />
         protected override State OnUpdate()
         {
-            if (string.IsNullOrEmpty(onUpdateMessage)) Debug.Log(onUpdateMessage);
+            if (!string.IsNullOrEmpty(onUpdateMessage)) Debug.Log(onUpdateMessage);
             return State.Success;
         }
 
