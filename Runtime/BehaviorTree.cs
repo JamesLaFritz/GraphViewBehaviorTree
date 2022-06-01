@@ -3,6 +3,7 @@
 // James LaFritz
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -163,9 +164,21 @@ namespace GraphViewBehaviorTree
         public BehaviorTree Clone()
         {
             BehaviorTree tree = Instantiate(this);
-            tree.rootNode = rootNode.Clone();
             tree.m_nodes = new List<Node>();
-            Traverse(tree.rootNode, (n) => tree.m_nodes.Add(n));
+            foreach (Node node in m_nodes)
+            {
+                tree.m_nodes.Add(node.Clone());
+            }
+
+            tree.rootNode = tree.m_nodes[m_nodes.IndexOf(rootNode)];
+            Traverse(rootNode, (n) =>
+            {
+                int nodeIndex = m_nodes.IndexOf(n);
+                foreach (int childIndex in m_nodes[nodeIndex]?.GetChildren().Select(c => m_nodes.IndexOf(c)))
+                {
+                    tree.AddChild(tree.m_nodes[nodeIndex], tree.m_nodes[childIndex]);
+                }
+            });
 
             return tree;
         }

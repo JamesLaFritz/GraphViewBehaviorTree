@@ -30,9 +30,9 @@ MonoBehaviour:
   m_Name: WaitNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: 69d2169de0bf3814ea131bd082ef4384
-  nodeGraphPosition: {x: 0, y: 0}
+  nodeGraphPosition: {x: 564.8075, y: 463.00003}
   duration: 1
 --- !u!114 &-6080400410064446002
 MonoBehaviour:
@@ -46,12 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187b4c814d8745dd891809af976622ac, type: 3}
   m_Name: SequencerNode
   m_EditorClassIdentifier: 
-  state: 0
+  state: 1
   started: 0
   guid: 27476df5e65b3374db2ed448308ce4d6
-  nodeGraphPosition: {x: 332.00003, y: 275}
+  nodeGraphPosition: {x: 712.035, y: 275}
   children:
   - {fileID: 1490985378949802541}
+  - {fileID: -6101847170108145313}
 --- !u!114 &-2301606920402744914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,9 +68,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 871f1f12aa640504ea7cf2aad879ff95
-  nodeGraphPosition: {x: 332, y: 87}
+  nodeGraphPosition: {x: 331.9999, y: 83.40001}
   children:
   - {fileID: 6533976223212460902}
+  - {fileID: 1490985378949802541}
+  - {fileID: -6101847170108145313}
   - {fileID: -6080400410064446002}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -105,10 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431c8572020b46eca6bb34110cbfe55b, type: 3}
   m_Name: DebugLogNode
   m_EditorClassIdentifier: 
-  state: 0
+  state: 1
   started: 0
   guid: e6a835f70624b014da0f649106a30686
-  nodeGraphPosition: {x: -128.00009, y: 462.99994}
+  nodeGraphPosition: {x: -61.398933, y: 463}
   message: Testing 1
 --- !u!114 &1490985378949802541
 MonoBehaviour:
@@ -122,11 +125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431c8572020b46eca6bb34110cbfe55b, type: 3}
   m_Name: DebugLogNode
   m_EditorClassIdentifier: 
-  state: 0
+  state: 1
   started: 0
   guid: 9f65d5f65bdb88e43b605f80db3e97e3
-  nodeGraphPosition: {x: 332.00003, y: 463.00003}
-  message: 
+  nodeGraphPosition: {x: 332.00003, y: 462.99997}
+  message: testing2
 --- !u!114 &3862997682584576290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,8 +177,9 @@ MonoBehaviour:
   m_Name: SequencerNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: 9bb8cd3c45451e147aa63cc02c21bb65
-  nodeGraphPosition: {x: 78.70995, y: 275}
+  nodeGraphPosition: {x: 101.4825, y: 274.99997}
   children:
   - {fileID: 252298260545338274}
+  - {fileID: -6101847170108145313}

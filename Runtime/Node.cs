@@ -94,26 +94,6 @@ namespace GraphViewBehaviorTree
         }
 
         /// <summary>
-        /// Clone the Node.
-        /// </summary>
-        /// <returns>A Clone of the Node.</returns>
-        public virtual Node Clone()
-        {
-            return Instantiate(this);
-        }
-
-        public virtual void ResetNode()
-        {
-            if (started)
-            {
-                OnStop();
-                started = false;
-            }
-
-            state = State.Running;
-        }
-
-        /// <summary>
         /// Update the Node.
         /// </summary>
         /// <returns>The state that the Node is in.</returns>
@@ -132,6 +112,15 @@ namespace GraphViewBehaviorTree
             OnStop();
             started = false;
             return state;
+        }
+
+        /// <summary>
+        /// Clone the Node.
+        /// </summary>
+        /// <returns>A Clone of the Node.</returns>
+        public Node Clone()
+        {
+            return Instantiate(this);
         }
     }
 }
