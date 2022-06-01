@@ -13,22 +13,41 @@ namespace GraphViewBehaviorTree
     public class DebugLogNode : ActionNode
     {
         /// <summary>
-        /// The Message to Log.
+        /// The Message to Log On Start.
+        /// Empty will not Log a message.
         /// </summary>
-        [SerializeField] private string message;
+        [SerializeField] private string onStartMessage;
+
+        /// <summary>
+        /// The Message to Log On Stop.
+        /// Empty will not Log a message.
+        /// </summary>
+        [SerializeField] private string onStopMessage;
+
+        /// <summary>
+        /// The Message to Log On Start.
+        /// Empty will not Log a message.
+        /// </summary>
+        [SerializeField] private string onUpdateMessage;
 
         #region Overrides of Node
 
         /// <inheritdoc />
-        protected override void OnStart() => Debug.Log($"OnStart: {message}");
+        protected override void OnStart()
+        {
+            if (string.IsNullOrEmpty(onStopMessage)) Debug.Log(onStopMessage);
+        }
 
         /// <inheritdoc />
-        protected override void OnStop() => Debug.Log($"OnStop: {message}");
+        protected override void OnStop()
+        {
+            if (string.IsNullOrEmpty(onStartMessage)) Debug.Log(onStartMessage);
+        }
 
         /// <inheritdoc />
         protected override State OnUpdate()
         {
-            Debug.Log($"OnUpdate: {message}");
+            if (string.IsNullOrEmpty(onUpdateMessage)) Debug.Log(onUpdateMessage);
             return State.Success;
         }
 
