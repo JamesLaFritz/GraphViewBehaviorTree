@@ -3,6 +3,7 @@
 // James LaFritz
 
 using System;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -42,12 +43,15 @@ namespace GraphViewBehaviorTree.Editor
         /// </summary>
         public Port output;
 
+        private Label m_description;
+
         /// <summary>
         /// Create a New Node View.
         /// </summary>
         /// <param name="node"><see cref="Node"/> that is associated with this view.</param>
         public BehaviorTreeNodeView(Node node) : base("Assets/GraphViewBehaviorTree/Editor/Resources/BehaviorTreeNodeView.uxml")
         {
+            m_description = this.Q<Label>("description-label");
             m_node = node;
             if (m_node == null) return;
             base.title = m_node.GetType().Name;
@@ -132,6 +136,15 @@ namespace GraphViewBehaviorTree.Editor
             RemoveFromClassList("running");
             RemoveFromClassList("success");
             RemoveFromClassList("failure");
+
+            if (m_description != null)
+            {
+                string text = $"{m_node.GetChildren().Count} children:";
+
+                text = m_node.GetChildren()!.Aggregate(text, (current, child) => current + $"\n{child.name} - {child.guid}");
+
+                m_description.text = text;
+            }
 
             if (!Application.isPlaying) return;
 
