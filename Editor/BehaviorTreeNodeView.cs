@@ -141,7 +141,7 @@ namespace GraphViewBehaviorTree.Editor
             {
                 string text = $"{m_node.GetChildren().Count} children:";
 
-                text = m_node.GetChildren()!.Aggregate(text, (current, child) => current + $"\n{child.name} - {child.guid}");
+                text = m_node.GetChildren()!.Aggregate(text, (current, child) => current + $"\n{child.name}");
 
                 m_description.text = text;
             }

@@ -127,6 +127,8 @@
     font-size: 12px;
     -unity-text-align: middle-left;
     margin: 6px 6px 0;
+    max-width: 150px;
+    white-space: normal;
 }
 
 .node:hover#collapse-button > #icon {

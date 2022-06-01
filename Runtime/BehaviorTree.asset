@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 02c66d77d88672b4d94d0ad98c91f55e
-  nodeGraphPosition: {x: 332, y: -95}
+  nodeGraphPosition: {x: 425.99997, y: -208.413}
   child: {fileID: -2301606920402744914}
 --- !u!114 &-6101847170108145313
 MonoBehaviour:
@@ -32,7 +32,7 @@ MonoBehaviour:
   state: 0
   started: 1
   guid: 69d2169de0bf3814ea131bd082ef4384
-  nodeGraphPosition: {x: 564.8075, y: 463.00003}
+  nodeGraphPosition: {x: 551.3122, y: 462.99994}
   duration: 1
 --- !u!114 &-6080400410064446002
 MonoBehaviour:
@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187b4c814d8745dd891809af976622ac, type: 3}
   m_Name: SequencerNode
   m_EditorClassIdentifier: 
-  state: 1
-  started: 0
+  state: 0
+  started: 1
   guid: 27476df5e65b3374db2ed448308ce4d6
-  nodeGraphPosition: {x: 712.035, y: 275}
+  nodeGraphPosition: {x: 726.5474, y: 275.00006}
   children:
   - {fileID: 1490985378949802541}
   - {fileID: -6101847170108145313}
@@ -68,7 +68,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 871f1f12aa640504ea7cf2aad879ff95
-  nodeGraphPosition: {x: 331.9999, y: 83.40001}
+  nodeGraphPosition: {x: 425.99997, y: -7.2575}
   children:
   - {fileID: 6533976223212460902}
   - {fileID: 1490985378949802541}
@@ -112,7 +112,9 @@ MonoBehaviour:
   started: 0
   guid: e6a835f70624b014da0f649106a30686
   nodeGraphPosition: {x: -61.398933, y: 463}
-  message: Testing 1
+  onStartMessage: 
+  onStopMessage: 
+  onUpdateMessage: 
 --- !u!114 &1490985378949802541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,8 +130,10 @@ MonoBehaviour:
   state: 1
   started: 0
   guid: 9f65d5f65bdb88e43b605f80db3e97e3
-  nodeGraphPosition: {x: 332.00003, y: 462.99997}
-  message: testing2
+  nodeGraphPosition: {x: 323.00003, y: 462.99994}
+  onStartMessage: 
+  onStopMessage: 
+  onUpdateMessage: 
 --- !u!114 &3862997682584576290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +150,9 @@ MonoBehaviour:
   started: 0
   guid: 49746482cc4df8f4d908a9f0fa7cd97e
   nodeGraphPosition: {x: -11.738266, y: 590.20496}
-  message: 
+  onStartMessage: 
+  onStopMessage: 
+  onUpdateMessage: 
 --- !u!114 &5534536031945773758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +185,7 @@ MonoBehaviour:
   state: 0
   started: 1
   guid: 9bb8cd3c45451e147aa63cc02c21bb65
-  nodeGraphPosition: {x: 101.4825, y: 274.99997}
+  nodeGraphPosition: {x: 46.777485, y: 275}
   children:
   - {fileID: 252298260545338274}
   - {fileID: -6101847170108145313}
