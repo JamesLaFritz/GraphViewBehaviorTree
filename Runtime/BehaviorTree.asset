@@ -15,8 +15,25 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 02c66d77d88672b4d94d0ad98c91f55e
-  nodeGraphPosition: {x: 425.99997, y: -208.413}
+  nodeGraphPosition: {x: 425.99997, y: -167}
   child: {fileID: -2301606920402744914}
+--- !u!114 &-7568370241545037074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842f007efe2a4c7884bd748bcf9f7530, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 6470957f761a98c4497964c66576af1a
+  nodeGraphPosition: {x: 853.3225, y: 237.00002}
+  duration: 1
 --- !u!114 &-6101847170108145313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,8 +49,8 @@ MonoBehaviour:
   state: 0
   started: 1
   guid: 69d2169de0bf3814ea131bd082ef4384
-  nodeGraphPosition: {x: 551.3122, y: 462.99994}
-  duration: 1
+  nodeGraphPosition: {x: 544, y: 431.00006}
+  duration: 0.5
 --- !u!114 &-6080400410064446002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,7 +66,7 @@ MonoBehaviour:
   state: 0
   started: 1
   guid: 27476df5e65b3374db2ed448308ce4d6
-  nodeGraphPosition: {x: 726.5474, y: 275.00006}
+  nodeGraphPosition: {x: 663, y: 237.00002}
   children:
   - {fileID: 1490985378949802541}
   - {fileID: -6101847170108145313}
@@ -68,12 +85,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 871f1f12aa640504ea7cf2aad879ff95
-  nodeGraphPosition: {x: 425.99997, y: -7.2575}
+  nodeGraphPosition: {x: 425.99997, y: 9.0000105}
   children:
   - {fileID: 6533976223212460902}
   - {fileID: 1490985378949802541}
   - {fileID: -6101847170108145313}
   - {fileID: -6080400410064446002}
+  - {fileID: -7568370241545037074}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +114,7 @@ MonoBehaviour:
   - {fileID: -2301606920402744914}
   - {fileID: 1490985378949802541}
   - {fileID: -6101847170108145313}
+  - {fileID: -7568370241545037074}
 --- !u!114 &252298260545338274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +130,7 @@ MonoBehaviour:
   state: 1
   started: 0
   guid: e6a835f70624b014da0f649106a30686
-  nodeGraphPosition: {x: -61.398933, y: 463}
+  nodeGraphPosition: {x: 98.99998, y: 431.00006}
   onStartMessage: 
   onStopMessage: 
   onUpdateMessage: 
@@ -130,7 +149,7 @@ MonoBehaviour:
   state: 1
   started: 0
   guid: 9f65d5f65bdb88e43b605f80db3e97e3
-  nodeGraphPosition: {x: 323.00003, y: 462.99994}
+  nodeGraphPosition: {x: 338.99997, y: 431.00006}
   onStartMessage: 
   onStopMessage: 
   onUpdateMessage: 
@@ -185,7 +204,7 @@ MonoBehaviour:
   state: 0
   started: 1
   guid: 9bb8cd3c45451e147aa63cc02c21bb65
-  nodeGraphPosition: {x: 46.777485, y: 275}
+  nodeGraphPosition: {x: 189, y: 237.00002}
   children:
   - {fileID: 252298260545338274}
   - {fileID: -6101847170108145313}
