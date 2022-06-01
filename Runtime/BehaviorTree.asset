@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 02c66d77d88672b4d94d0ad98c91f55e
-  nodeGraphPosition: {x: 425.99997, y: -167}
+  nodeGraphPosition: {x: 425.99997, y: -165.6775}
   child: {fileID: -2301606920402744914}
 --- !u!114 &-7568370241545037074
 MonoBehaviour:
@@ -33,7 +33,23 @@ MonoBehaviour:
   started: 0
   guid: 6470957f761a98c4497964c66576af1a
   nodeGraphPosition: {x: 853.3225, y: 237.00002}
-  duration: 1
+  duration: 0.25
+--- !u!114 &-6723069552704769209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27167995e4d84a02bd1a15c6c467dc1b, type: 3}
+  m_Name: Fail
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f185f6ee623b2194ca8b6567697120b8
+  nodeGraphPosition: {x: 1061.5708, y: 237.00003}
 --- !u!114 &-6101847170108145313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +108,7 @@ MonoBehaviour:
   - {fileID: -6101847170108145313}
   - {fileID: -6080400410064446002}
   - {fileID: -7568370241545037074}
+  - {fileID: -6723069552704769209}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +132,7 @@ MonoBehaviour:
   - {fileID: 1490985378949802541}
   - {fileID: -6101847170108145313}
   - {fileID: -7568370241545037074}
+  - {fileID: -6723069552704769209}
 --- !u!114 &252298260545338274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +151,7 @@ MonoBehaviour:
   nodeGraphPosition: {x: 98.99998, y: 431.00006}
   onStartMessage: 
   onStopMessage: 
-  onUpdateMessage: 
+  onUpdateMessage: Testing 1234
 --- !u!114 &1490985378949802541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,10 +167,10 @@ MonoBehaviour:
   state: 1
   started: 0
   guid: 9f65d5f65bdb88e43b605f80db3e97e3
-  nodeGraphPosition: {x: 338.99997, y: 431.00006}
+  nodeGraphPosition: {x: 338.99997, y: 431.00003}
   onStartMessage: 
   onStopMessage: 
-  onUpdateMessage: 
+  onUpdateMessage: Testing 2
 --- !u!114 &3862997682584576290
 MonoBehaviour:
   m_ObjectHideFlags: 0
