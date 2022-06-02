@@ -93,6 +93,22 @@ namespace GraphViewBehaviorTree
             return children;
         }
 
+        public void Reset()
+        {
+            foreach (Node child in GetChildren())
+            {
+                child.Reset();
+            }
+
+            if (started)
+            {
+                OnStop();
+                started = false;
+            }
+
+            state = State.Running;
+        }
+
         /// <summary>
         /// Update the Node.
         /// </summary>
