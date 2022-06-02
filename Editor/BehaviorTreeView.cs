@@ -115,6 +115,7 @@ namespace GraphViewBehaviorTree.Editor
                     BehaviorTreeNodeView childView = edge.input.node as BehaviorTreeNodeView;
 
                     m_tree.AddChild(parentView.node, childView.node);
+                    parentView?.SortChildren();
 
                     int count = (childView.input.connections ?? Array.Empty<Edge>()).Count();
                     childView.node.hasMultipleParents = count > 0;
