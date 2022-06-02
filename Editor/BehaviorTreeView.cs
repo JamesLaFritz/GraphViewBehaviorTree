@@ -69,6 +69,7 @@ namespace GraphViewBehaviorTree.Editor
                                   let parentView = GetNodeByGuid(node.guid) as BehaviorTreeNodeView
                                   where parentView is { output: { } }
                                   from child in m_tree.GetChildren(node)
+                                  where child != null
                                   let childView = GetNodeByGuid(child.guid) as BehaviorTreeNodeView
                                   where childView is { input: { } }
                                   select parentView.output.ConnectTo(childView.input))
@@ -97,6 +98,9 @@ namespace GraphViewBehaviorTree.Editor
                             BehaviorTreeNodeView parentView = edge.output.node as BehaviorTreeNodeView;
                             BehaviorTreeNodeView childView = edge.input.node as BehaviorTreeNodeView;
                             m_tree.RemoveChild(parentView.node, childView.node);
+                            int count = (childView.input.connections ?? Array.Empty<Edge>()).Count();
+                            childView.node.hasMultipleParents = count > 2;
+
                             break;
                         }
                     }
@@ -111,6 +115,9 @@ namespace GraphViewBehaviorTree.Editor
                     BehaviorTreeNodeView childView = edge.input.node as BehaviorTreeNodeView;
 
                     m_tree.AddChild(parentView.node, childView.node);
+
+                    int count = (childView.input.connections ?? Array.Empty<Edge>()).Count();
+                    childView.node.hasMultipleParents = count > 0;
                 }
             }
 

@@ -53,6 +53,11 @@ namespace GraphViewBehaviorTree
         [HideInInspector] public Vector2 nodeGraphPosition;
 
         /// <summary>
+        /// Does this node have More then one parent.
+        /// </summary>
+        [HideInInspector] public bool hasMultipleParents;
+
+        /// <summary>
         /// Runs when the Node first starts running.
         /// Initialize the Node.
         /// </summary>
@@ -129,7 +134,13 @@ namespace GraphViewBehaviorTree
                 return State.Running;
             }
 
-            if (!started) return state;
+            if (!started)
+            {
+                if (!hasMultipleParents) return state;
+                State stateToReturn = state;
+                Reset();
+                return stateToReturn;
+            }
 
             started = false;
             OnStop();
