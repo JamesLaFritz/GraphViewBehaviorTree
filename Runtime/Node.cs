@@ -99,19 +99,26 @@ namespace GraphViewBehaviorTree
         /// <returns>The state that the Node is in.</returns>
         public State Update()
         {
-            if (!started)
+            if (!started && state == State.Running)
             {
-                OnStart();
                 started = true;
+                OnStart();
+                return state;
             }
 
-            state = OnUpdate();
-
             // if the state is running the state is not failure or not success (in case I decide to add other states latter).
-            if (state != State.Failure && state != State.Success) return state;
-            OnStop();
+            if (state != State.Failure && state != State.Success)
+            {
+                state = OnUpdate();
+                return State.Running;
+            }
+
+            if (!started) return state;
+
             started = false;
-            return state;
+            OnStop();
+
+            return State.Running;
         }
 
         /// <summary>
