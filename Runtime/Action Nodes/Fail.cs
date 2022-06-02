@@ -15,10 +15,7 @@ namespace GraphViewBehaviorTree
         protected override void OnStop() { }
 
         /// <inheritdoc />
-        protected override State OnUpdate()
-        {
-            return State.Failure;
-        }
+        protected override State OnUpdate() => state = State.Failure;
 
         #endregion
     }
