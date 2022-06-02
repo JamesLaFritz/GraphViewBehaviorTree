@@ -3,6 +3,7 @@
 // James LaFritz
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
@@ -139,9 +140,15 @@ namespace GraphViewBehaviorTree.Editor
 
             if (m_description != null)
             {
-                string text = $"{m_node.GetChildren().Count} children:";
+                List<Node> nodes = m_node.GetChildren();
+                int count = m_node.GetChildren().Count;
+                string text = $"{count} children:";
 
-                text = m_node.GetChildren()!.Aggregate(text, (current, child) => current + $"\n{child.name}");
+                text = nodes!.Aggregate(
+                    text,
+                    (current, child) =>
+                        $"{current}\n{(child == null ? "" : child.name)}" +
+                        $"{(child is DecoratorNode ? $": {(child.GetChildren()[0] != null ? child.GetChildren()[0].name : "")}" : "")}");
 
                 m_description.text = text;
             }
