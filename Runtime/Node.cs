@@ -35,7 +35,7 @@ namespace GraphViewBehaviorTree
         /// </summary>
         [SerializeField, HideInInspector] public State state = State.Running;
 
-        [SerializeField, HideInInspector] bool started;
+        [SerializeField, HideInInspector] protected bool started;
 
         /// <summary>
         /// Has the node started.
@@ -98,11 +98,11 @@ namespace GraphViewBehaviorTree
             return children;
         }
 
-        public void Reset()
+        public virtual void NodeReset()
         {
             foreach (Node child in GetChildren())
             {
-                child.Reset();
+                child.NodeReset();
             }
 
             if (started)
@@ -138,7 +138,7 @@ namespace GraphViewBehaviorTree
             {
                 if (!hasMultipleParents) return state;
                 State stateToReturn = state;
-                Reset();
+                NodeReset();
                 return stateToReturn;
             }
 

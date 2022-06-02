@@ -19,7 +19,7 @@ namespace GraphViewBehaviorTree
         protected override void OnStop()
         {
             if (!IsStarted)
-                Reset();
+                NodeReset();
         }
 
         /// <inheritdoc />
