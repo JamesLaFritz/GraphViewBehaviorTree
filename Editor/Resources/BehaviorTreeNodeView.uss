@@ -60,11 +60,6 @@
     border-bottom-width: 1px;
 }
 
-#divider.vertical {
-    width: 0.01px;
-    border-right-width: 1px;
-}
-
 #contents > #top {
     flex-direction: column;
 }
@@ -123,7 +118,7 @@
     font-size: 12px;
     -unity-text-align: middle-left;
     margin: 6px 6px 0;
-    max-width: 150px;
+    max-width: 250px;
     white-space: normal;
 }
 
@@ -132,7 +127,7 @@
 }
 
 .node {
-    min-width: 150px;
+    min-width: 267px;
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
