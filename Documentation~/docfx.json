@@ -1,0 +1,86 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {              
+		  "src":"../",
+          "files": ["**.cs"],
+          "exclude": [
+            "_site/**",
+            "**/bin/**",
+            "**/obj/**",
+            "**/[Tt]ests/**"
+          ]
+        }
+      ],
+      "dest": "api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false,
+      "force": true,
+      "properties": {"TargetFramework": "netstandard2.1"}
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": ["api/**"]
+      },
+      {
+        "src": "../",
+        "files": [
+          "CHANGELOG.md",
+          "LICENSE.md",
+          "Third Party Notices.md"
+        ],
+        "dest": "articles/"
+      },
+      {
+        "files": ["**/toc.yml", "**.md"],
+        "exclude": [
+          "_site/**",
+          "api/**",
+          "articles/**",
+          "Images/**",
+          "obj/**",
+          "**/bin/**",
+          "**/obj/**",
+          "**/[Tt]ests/**",
+          "**/api/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": ["Images/**"]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "api/**.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      }
+    ],
+    "dest": "../docs",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": [
+      "default",
+	  "templates/unity"
+    ],
+    "globalMetadata": {
+      "_appTitle": "Graph View Behavior Tree Documentation",
+      "_enableSearch": true
+    },
+    "postProcessors": [],
+    "markdownEngineName": "markdig",
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false
+  }
+}

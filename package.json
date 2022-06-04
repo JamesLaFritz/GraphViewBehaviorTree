@@ -6,7 +6,7 @@
   "unity": "2021.3",
   "author": {
     "name": "James LaFritz",
-    "url": "https://jameslafritz.com/"
+    "url": "https://jameslafritz.github.io/"
   },
   "changlogURL": "https://github.com/JamesLaFritz/GraphViewBehaviorTree/CHANGELOG.md",
   "dependencies": {
@@ -45,7 +45,7 @@
     "Attribute",
     "Inspector"
   ],
-  "licensesUrl": "https://github.com/JamesLaFritz/GraphViewBehaviorTree/LICENSE.md",
+  "licensesUrl": "https://jameslafritz.github.io/GraphViewBehaviorTree/articles/LICENSE.html",
   "samples": [
     {
       "displayName": "Samples 1",
