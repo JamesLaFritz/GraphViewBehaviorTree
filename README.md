@@ -10,6 +10,9 @@
         <a href="https://github.com/JamesLaFritz/GraphViewBehaviorTree/issues">Request Feature</a>
 </p>
 
+[Documentation](https://jameslafritz.github.io/GraphViewBehaviorTree/Documentation~/_site/)
+
+
 <!-- PROJECT SHIELDS -->
 <p align="center">
   <a href="https://github.com/JamesLafritz/GraphViewBehaviorTree/graphs/contributors">
