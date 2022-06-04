@@ -37,25 +37,20 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.wind": "1.0.0"
   },
-  "documentationUrl": "Documentation~/",
+  "documentationUrl": "https://jameslafritz.github.io/GraphViewBehaviorTree/api/GraphViewBehaviorTree.html",
   "hideInEditor": "false",
   "keywords": [
     "ScriptableObject",
-    "Variable",
-    "Attribute",
+    "UI",
+    "Editor",
     "Inspector"
   ],
   "licensesUrl": "https://jameslafritz.github.io/GraphViewBehaviorTree/articles/LICENSE.html",
   "samples": [
     {
-      "displayName": "Samples 1",
-      "description": "Show some Sample.",
-      "path": "Samples~/SamplesFolder1"
-    },
-    {
-      "displayName": "Samples 2",
-      "description": "Show some other Sample.",
-      "path": "Samples~/SamplesFolder2"
+      "displayName": "Simple Tree",
+      "description": "A Scene with a Tree Runner that runs a simple tree forever.",
+      "path": "Samples~/Simple Tree"
     }
   ]
 }
