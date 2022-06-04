@@ -1,0 +1,473 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/James/Documents/Unity/GitHub/DevEnviroment/Assets/GraphViewBehaviorTree/Documentation~",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/CHANGELOG.html",
+          "hash": "UB2VtSjqvt1x989ITLf+tH9iLnzziHx/KptwvohJTkg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/LICENSE.html",
+          "hash": "UMItxihZjDHPhf5IF3zBzglD2pzm9V9PcPv8Mf+aqrc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "../Third Party Notices.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Third Party Notices.html",
+          "hash": "+M82YdGeTa3d/a/keR4oRdq67VDWu/9APWP+kgVrOjs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/InstallPackage.gif",
+      "output": {
+        "resource": {
+          "relative_path": "Images/InstallPackage.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/Logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/Logo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/OpenPackageManager.gif",
+      "output": {
+        "resource": {
+          "relative_path": "Images/OpenPackageManager.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/ScreenShot.gif",
+      "output": {
+        "resource": {
+          "relative_path": "Images/ScreenShot.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Images/ScreenShot.png",
+      "output": {
+        "resource": {
+          "relative_path": "Images/ScreenShot.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.BehaviorTree.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.BehaviorTree.html",
+          "hash": "ZnTneVsK04Rxrx+r8zy7Tx/LhBR0TcXWUPrD414qQIA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.BehaviorTreeRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.BehaviorTreeRunner.html",
+          "hash": "y2yGk0MSEPNgaIksbQnryytUonyUS4jzg3POKAK5wcA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Editor.BehaviorTreeEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Editor.BehaviorTreeEditor.html",
+          "hash": "gXHnLxL30SvTIJxoD5JZp6hvZ/zuen6BQhOTP38nN0U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Editor.Views.BehaviorTreeNodeView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Editor.Views.BehaviorTreeNodeView.html",
+          "hash": "Pyk39uDoeFjdeIlzU4Ly3NsjV+uMxT21zUdP4rWkC24="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Editor.Views.BehaviorTreeView.UxmlFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Editor.Views.BehaviorTreeView.UxmlFactory.html",
+          "hash": "C7AEv6F3jfYAWzKwK8v75Q/nD8NwZeEGbuKjoe4YueA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Editor.Views.BehaviorTreeView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Editor.Views.BehaviorTreeView.html",
+          "hash": "4E/Y8PTreLoHFvRg7DgHwJokRbJP7pHBNptzgn3hLnk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Editor.Views.SplitView.UxmlFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Editor.Views.SplitView.UxmlFactory.html",
+          "hash": "s2cuIbqT9OD+04Ujgg3CpCq3QIc/7KXBDuVv1rKjjQY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Editor.Views.SplitView.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Editor.Views.SplitView.html",
+          "hash": "DZlCftRcUdJrqKRQx7cV7CYUIqaFzBYwK2vtNjEhoJA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Editor.Views.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Editor.Views.html",
+          "hash": "Qaix8ap+nZ2g8IKxHeg5q5paGkrqYwOc136nhgOQ/Yw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Editor.html",
+          "hash": "vuh3FVmzE8ZqitxMpcOXlVaDRNI7yJjqWJR4A62Gk/Q="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.ActionNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.ActionNode.html",
+          "hash": "w6iv1nHgY/73EM6G44qK4nrr6N0VpLpk6PRiIDipPkc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.CompositeNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.CompositeNode.html",
+          "hash": "8QxOv9OFT08DJEGG5BuzA2Q8C0k7Xueb+tVJoYMfIeQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.DebugLogNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.DebugLogNode.html",
+          "hash": "hWW+q5VhD/b3xooRBKkM3icOT3EySEOMZaV+LSY+ppQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.DecoratorNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.DecoratorNode.html",
+          "hash": "rksQFQTP4agW1V++iiRbp6BbXeTq3wFsTM0fmVUFO0s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.DelayNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.DelayNode.html",
+          "hash": "C3xVe7EIUaZZc7g9U+hEiS888AVRG4b9x8qGcppHYRI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.Fail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.Fail.html",
+          "hash": "drKaB8j2HmT1YU3a/HAWM3eQliJ9KIIZHdAeXftqX8o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.Node.State.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.Node.State.html",
+          "hash": "GwU7KpdYcdJ29dPLBMd//+N/n8yvviFJKRBl+ctf4Y8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.Node.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.Node.html",
+          "hash": "NyJkc8Qgz8ItkHM+uOIc52Z+1y9zYDRTB9FTJhfikRs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.RepeatNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.RepeatNode.html",
+          "hash": "boi5p89XH1XjeRVWCux+4LNQSuFUW6hCbNXcM10rWAY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.SequencerNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.SequencerNode.html",
+          "hash": "Cmv7UESd+LUWreyUOmJezWW6BhgsRlghBmyiV/BTwQk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.WaitNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.WaitNode.html",
+          "hash": "vaastyJ3o1cWqxj/5Vvf5gs2+GLnsNeL5glenDuYRC8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.Nodes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.Nodes.html",
+          "hash": "Sm+n7hWMN6MNJjrfWdMclf2obRYPae4Vnnrlx3s1WOI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/GraphViewBehaviorTree.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/GraphViewBehaviorTree.html",
+          "hash": "Xrc6mTV8y4EJt3J1YOqW0IOWRAnS3bQpo/BqAyUUjPM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "1WKpjaSbhAyuwoJBQuTOAKDE0+oarmXY4Bc5+Ehjlzc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/README.html",
+          "hash": "pG2YatuhGQQUtzW574AOagsZKY+3K3sSKmfLozUyr5M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "hnecp9mF/1hcrQ/UDsPy4FD85jqNy8lr2E8Ue4zHM6c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 4,
+          "skipped_file_count": 2
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 23,
+          "skipped_file_count": 23
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

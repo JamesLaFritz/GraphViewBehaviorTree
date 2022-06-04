@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DecoratorNode
+   | Graph View Behavior Tree Documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DecoratorNode
+   | Graph View Behavior Tree Documentation ">
+    <meta name="generator" content="docfx 2.58.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="GraphViewBehaviorTree.Nodes.DecoratorNode">
+  
+  
+  <h1 id="GraphViewBehaviorTree_Nodes_DecoratorNode" data-uid="GraphViewBehaviorTree.Nodes.DecoratorNode" class="text-break">Class DecoratorNode
+  </h1>
+  <div class="markdown level0 summary"><p><a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html">Node</a> that has one child Node and is capable of augmenting the return state of it's childNode.
+The Interface, Abstract members will be implemented in the individual Decorator Nodes.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html">Node</a></div>
+    <div class="level2"><span class="xref">DecoratorNode</span></div>
+      <div class="level3"><a class="xref" href="GraphViewBehaviorTree.Nodes.DelayNode.html">DelayNode</a></div>
+      <div class="level3"><a class="xref" href="GraphViewBehaviorTree.Nodes.RepeatNode.html">RepeatNode</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_state">Node.state</a>
+    </div>
+    <div>
+      <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_IsStarted">Node.IsStarted</a>
+    </div>
+    <div>
+      <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_guid">Node.guid</a>
+    </div>
+    <div>
+      <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_nodeGraphPosition">Node.nodeGraphPosition</a>
+    </div>
+    <div>
+      <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_hasMultipleParents">Node.hasMultipleParents</a>
+    </div>
+    <div>
+      <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_OnStart">Node.OnStart()</a>
+    </div>
+    <div>
+      <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_OnStop">Node.OnStop()</a>
+    </div>
+    <div>
+      <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_OnUpdate">Node.OnUpdate()</a>
+    </div>
+    <div>
+      <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_NodeReset">Node.NodeReset()</a>
+    </div>
+    <div>
+      <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_Update">Node.Update()</a>
+    </div>
+    <div>
+      <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_Clone">Node.Clone()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="GraphViewBehaviorTree.Nodes.html">GraphViewBehaviorTree.Nodes</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="GraphViewBehaviorTree_Nodes_DecoratorNode_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public abstract class DecoratorNode : Node</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="GraphViewBehaviorTree_Nodes_DecoratorNode_child" data-uid="GraphViewBehaviorTree.Nodes.DecoratorNode.child">child</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Node child</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html">Node</a></td>
+        <td><p>The <a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html">Node</a> to Augment.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="GraphViewBehaviorTree_Nodes_DecoratorNode_AddChild_" data-uid="GraphViewBehaviorTree.Nodes.DecoratorNode.AddChild*"></a>
+  <h4 id="GraphViewBehaviorTree_Nodes_DecoratorNode_AddChild_GraphViewBehaviorTree_Nodes_Node_" data-uid="GraphViewBehaviorTree.Nodes.DecoratorNode.AddChild(GraphViewBehaviorTree.Nodes.Node)">AddChild(Node)</h4>
+  <div class="markdown level1 summary"><p>Add the child node to this node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void AddChild(Node childNode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html">Node</a></td>
+        <td><span class="parametername">childNode</span></td>
+        <td><p>The Node to add as a Child.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_AddChild_GraphViewBehaviorTree_Nodes_Node_">Node.AddChild(Node)</a></div>
+  
+  
+  <a id="GraphViewBehaviorTree_Nodes_DecoratorNode_GetChildren_" data-uid="GraphViewBehaviorTree.Nodes.DecoratorNode.GetChildren*"></a>
+  <h4 id="GraphViewBehaviorTree_Nodes_DecoratorNode_GetChildren" data-uid="GraphViewBehaviorTree.Nodes.DecoratorNode.GetChildren">GetChildren()</h4>
+  <div class="markdown level1 summary"><p>Get a list of children the node contains.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override List&lt;Node&gt; GetChildren()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">List</span>&lt;<a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html">Node</a>&gt;</td>
+        <td><p>A list of children Nodes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_GetChildren">Node.GetChildren()</a></div>
+  
+  
+  <a id="GraphViewBehaviorTree_Nodes_DecoratorNode_RemoveChild_" data-uid="GraphViewBehaviorTree.Nodes.DecoratorNode.RemoveChild*"></a>
+  <h4 id="GraphViewBehaviorTree_Nodes_DecoratorNode_RemoveChild_GraphViewBehaviorTree_Nodes_Node_" data-uid="GraphViewBehaviorTree.Nodes.DecoratorNode.RemoveChild(GraphViewBehaviorTree.Nodes.Node)">RemoveChild(Node)</h4>
+  <div class="markdown level1 summary"><p>Remove a Child from the Node.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void RemoveChild(Node childNode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html">Node</a></td>
+        <td><span class="parametername">childNode</span></td>
+        <td><p>The Child to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="GraphViewBehaviorTree.Nodes.Node.html#GraphViewBehaviorTree_Nodes_Node_RemoveChild_GraphViewBehaviorTree_Nodes_Node_">Node.RemoveChild(Node)</a></div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

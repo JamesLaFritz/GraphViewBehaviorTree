@@ -1,0 +1,42 @@
+### YamlMime:ManagedReference
+items:
+- uid: GraphViewBehaviorTree.Editor.Views.SplitView
+  commentId: T:GraphViewBehaviorTree.Editor.Views.SplitView
+  id: SplitView
+  parent: GraphViewBehaviorTree.Editor.Views
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: SplitView
+  nameWithType: SplitView
+  fullName: GraphViewBehaviorTree.Editor.Views.SplitView
+  type: Class
+  source:
+    id: SplitView
+    path: ''
+    startLine: 700
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Editor.Views
+  summary: "\n<a href=\"https://docs.unity3d.com/2021.3/Documentation/ScriptReference/UIElements.TwoPaneSplitView.html\" rel=\"external\">UnityEngine.UIElements.TwoPaneSplitView</a>\nA SplitView that contains two resizable panes. One pane is fixed-size while the other pane has flex-grow style set to 1 to take all remaining space.\nThe border between he panes is draggable to resize both panes. Both horizontal and vertical modes are supported.\nRequires _exactly_ two child elements to operate.\n\nAllows you to add a split view in the <a href=\"https://docs.unity3d.com/Packages/com.unity.ui.builder@1.0/manual/index.html\" rel=\"external\">UI Builder</a>.\n"
+  example: []
+  syntax:
+    content: 'public class SplitView : TwoPaneSplitView'
+    content.vb: >-
+      Public Class SplitView
+          Inherits TwoPaneSplitView
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+references:
+- uid: GraphViewBehaviorTree.Editor.Views
+  commentId: N:GraphViewBehaviorTree.Editor.Views
+  name: GraphViewBehaviorTree.Editor.Views
+  nameWithType: GraphViewBehaviorTree.Editor.Views
+  fullName: GraphViewBehaviorTree.Editor.Views

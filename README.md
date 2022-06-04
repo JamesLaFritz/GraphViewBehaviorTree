@@ -88,7 +88,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Product Name Screen Shot](Documentation~/Images/ScreenShot.png)
+![Product Name Screen Shot](Documentation~/Images/ScreenShot.gif)
 
 I had code on sitting around on my hard drive for a Behavior Tree Editor That inspired me to create a bBehavior Tree Editor and write Articles about Behavior Tree and Using the Unity Editor UI Builder.
 It has been [Pointed Out](https://github.com/JamesLaFritz/GraphViewBehaviorTree/issues/1) to me very polite and professional that this code is actually from the KIWI Coder.
@@ -96,6 +96,11 @@ It has been [Pointed Out](https://github.com/JamesLaFritz/GraphViewBehaviorTree/
 [![The Kiwi Coder](https://thekiwicoder.com/wp-content/uploads/2020/02/site_logo.png)](https://thekiwicoder.com/)
 
 Behavior Tree using UI Builder, GraphView, and Scriptable Objects in Unity 2021.3
+
+This can be used as a template to build any type on Node Based Editor in Unity. i.e Dialog System or an AI Behavior Tree.
+If using for AI Behavior tree I would probably use Single Input Ports not Multiple.
+Even though the Nodes themselves are Scriptable Objects this can be changed and there is nothing that states that you have to use Scriptable Objects as the type for the nodes, this was just a decision that I made as it is easier to Bing the properties off the Node. 
+Also there is nothing sating that the Nodes have to be stored in the Asset itself as I have done. 
 
 Behavior Tree is an execution tree (uses the [Strategy pattern](https://blog.devgenius.io/strategy-pattern-in-unity-b82065aaa969)) and always starts with a Root Node. This will be so
 that the behavior tree knows where to start. Root Node has only one child. Now there are 3 basic main type of nodes
@@ -120,12 +125,42 @@ loops. There are 2 types Composite Nodes the Selector and Sequence. This uses th
 
 * <a href="https://www.linkedin.com/in/james-lafritz/"><img src="https://img.shields.io/badge/Unity-100000?style=for-the-badge&logo=unity&logoColor=white"/></a>
 
+<!-- Installation -->
+### Installation
+To install this into your project for modifications
+Clone or Download the code from Git Hub into the Asset Folder of your project.
+Change the Folder From GraphView Behavior Tree to mach what you wold like.
+Edit all Files and change the NameSpace to match your new Folder Name. Do Not forget to change this in the UXML Documents as well. i.e "GraphViewBehaviorTree.Editor.SplitView"
+Delete the Runtime/james.lafritz.GraphViewBehaviorTree and Editor/james.lafritz.GraphViewBehaviorTree.Editor Assembly Definition Files, Or Edit/Replace them with your own.
+
+To use Template as is Use the Package manager to Install package from Git Hub. 
+see [Creating custom packages for use in Unity](https://blog.devgenius.io/creating-custom-packages-for-use-in-unity-7dfbaa49e4b4)
+
+* In Unity open the package manager
+    * Go to Window->PackageManager
+    * ![OpenPackageManager](Documentation~/Images/OpenPackageManager.gif)
+* Install this Package from git url
+    * Click the Plus Drop down
+    * Select "add package from git URL"
+        * https://github.com/JamesLaFritz/GraphViewBehaviorTree.git
+        * Select add
+    * ![InstallPackage](Documentation~/Images/InstallPackage.gif)
 
 <!-- Articles -->
 ### Articles
 
+[Behavior Trees In Unity](https://ktmarine1999.medium.com/behavior-trees-in-unity-20a738b5508c)
+
+[Using Unity’s UI Builder: Basic Set Up](https://blog.devgenius.io/using-unitys-ui-builder-a86faf17bf27)
+
+[Using Unity’s UI Builder: Serialized Object data binding](https://blog.devgenius.io/using-unitys-ui-builder-bc058e1c7d17)
+
 []()
+
 []()
+
+[]()
+
 []()
 
 

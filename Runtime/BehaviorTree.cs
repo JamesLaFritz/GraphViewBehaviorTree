@@ -4,45 +4,49 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using GraphViewBehaviorTree.Nodes;
 using UnityEditor;
 using UnityEngine;
 
 namespace GraphViewBehaviorTree
 {
     /// <summary>
-    /// Behavior tree is an execution tree requires that the Root Node be set, derived from <see cref="UnityEngine.ScriptableObject"/>
+    /// Behavior tree is an execution tree, requires that the Root Node be set, derived from <a hfref="https://docs.unity3d.com/2021.3/Documentation/ScriptReference/ScriptableObject.html">UnityEngine.ScriptableObject</a>
     /// </summary>
     [CreateAssetMenu(fileName = "BehaviorTree", menuName = "Behavior Tree")]
     [System.Serializable]
     public class BehaviorTree : ScriptableObject
     {
-        /// <summary>
+        /// <value>
         /// The Node to start the Behavior tree.
-        /// </summary>
+        /// </value>
         [HideInInspector] public Node rootNode;
 
-        /// <summary>
+        /// <value>
         /// The State the tree is in.
-        /// </summary>
+        /// </value>
         [HideInInspector] public Node.State treeState = Node.State.Running;
 
-        /// <summary>
+        /// <value>
         /// The Nodes that the tree has.
-        /// </summary>
-        [SerializeField, HideInInspector] List<Node> m_nodes = new List<Node>();
+        /// </value>
+        [SerializeField, HideInInspector] private List<Node> nodes = new List<Node>();
 
-        /// <summary>
+        /// <value>
         /// Get all of the Nodes in the Tree.
-        /// </summary>
+        /// </value>
         public List<Node> GetNodes()
         {
-            return m_nodes;
+            return nodes;
         }
 
+        /// <value>
+        /// Does the Tree have a Root Node.
+        /// </value>
         private bool m_hasRootNode;
 
         /// <summary>
-        /// Update the tree by updating the root node.
+        /// Update the Tree by updating the root node.
         /// </summary>
         /// <returns>The state of the tree.</returns>
         public Node.State Update()
@@ -80,7 +84,7 @@ namespace GraphViewBehaviorTree
             node.name = type.Name;
             node.guid = GUID.Generate().ToString();
 
-            m_nodes.Add(node);
+            nodes.Add(node);
 
             if (rootNode == null)
                 rootNode = node;
@@ -94,15 +98,15 @@ namespace GraphViewBehaviorTree
         /// <param name="node">The Node to Delete.</param>
         public void DeleteNode(Node node)
         {
-            m_nodes.Remove(node);
+            nodes.Remove(node);
 
             if (rootNode == node)
             {
                 rootNode = null;
 
-                if (m_nodes.Count > 0)
+                if (nodes.Count > 0)
                 {
-                    rootNode = m_nodes[0];
+                    rootNode = nodes[0];
                 }
             }
         }
@@ -114,13 +118,13 @@ namespace GraphViewBehaviorTree
         /// <param name="child">The Node to add to the parent.</param>
         public void AddChild(Node parent, Node child)
         {
-            if (!m_nodes.Contains(parent)) return;
+            if (!nodes.Contains(parent)) return;
 
-            m_nodes[m_nodes.IndexOf(parent)].AddChild(child);
+            nodes[nodes.IndexOf(parent)].AddChild(child);
 
-            if (m_nodes.Contains(child)) return;
+            if (nodes.Contains(child)) return;
 
-            m_nodes.Add(child);
+            nodes.Add(child);
         }
 
         /// <summary>
@@ -130,9 +134,9 @@ namespace GraphViewBehaviorTree
         /// <param name="child">The Node to remove from the parent.</param>
         public void RemoveChild(Node parent, Node child)
         {
-            if (!m_nodes.Contains(parent)) return;
+            if (!nodes.Contains(parent)) return;
 
-            m_nodes[m_nodes.IndexOf(parent)].RemoveChild(child);
+            nodes[nodes.IndexOf(parent)].RemoveChild(child);
         }
 
         /// <summary>
@@ -142,9 +146,9 @@ namespace GraphViewBehaviorTree
         /// <returns>A list of children Nodes that the parent contains.</returns>
         public List<Node> GetChildren(Node parent)
         {
-            return !m_nodes.Contains(parent)
+            return !nodes.Contains(parent)
                 ? new List<Node>()
-                : m_nodes[m_nodes.IndexOf(parent)].GetChildren();
+                : nodes[nodes.IndexOf(parent)].GetChildren();
         }
 
         /// <summary>
@@ -164,20 +168,20 @@ namespace GraphViewBehaviorTree
         public BehaviorTree Clone()
         {
             BehaviorTree tree = Instantiate(this);
-            tree.m_nodes = new List<Node>();
-            foreach (Node node in m_nodes)
+            tree.nodes = new List<Node>();
+            foreach (Node node in nodes)
             {
-                tree.m_nodes.Add(node.Clone());
+                tree.nodes.Add(node.Clone());
             }
 
-            tree.rootNode = tree.m_nodes[m_nodes.IndexOf(rootNode)];
+            tree.rootNode = tree.nodes[nodes.IndexOf(rootNode)];
             Traverse(rootNode, (n) =>
             {
-                int nodeIndex = m_nodes.IndexOf(n);
-                foreach (int childIndex in m_nodes[nodeIndex]?.GetChildren().Select(c => m_nodes.IndexOf(c)))
+                int nodeIndex = nodes.IndexOf(n);
+                foreach (int childIndex in nodes[nodeIndex]?.GetChildren().Select(c => nodes.IndexOf(c)))
                 {
-                    tree.m_nodes[nodeIndex].RemoveChild(m_nodes[childIndex]);
-                    tree.AddChild(tree.m_nodes[nodeIndex], tree.m_nodes[childIndex]);
+                    tree.nodes[nodeIndex].RemoveChild(nodes[childIndex]);
+                    tree.AddChild(tree.nodes[nodeIndex], tree.nodes[childIndex]);
                 }
             });
 

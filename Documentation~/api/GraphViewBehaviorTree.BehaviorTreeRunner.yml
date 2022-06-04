@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: GraphViewBehaviorTree.BehaviorTreeRunner
+  commentId: T:GraphViewBehaviorTree.BehaviorTreeRunner
+  id: BehaviorTreeRunner
+  parent: GraphViewBehaviorTree
+  children:
+  - GraphViewBehaviorTree.BehaviorTreeRunner.tree
+  langs:
+  - csharp
+  - vb
+  name: BehaviorTreeRunner
+  nameWithType: BehaviorTreeRunner
+  fullName: GraphViewBehaviorTree.BehaviorTreeRunner
+  type: Class
+  source:
+    id: BehaviorTreeRunner
+    path: ''
+    startLine: 911
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree
+  summary: "\n<a href=\"https://docs.unity3d.com/ScriptReference/MonoBehaviour.html\" rel=\"external\">&quot;UnityEngine.MonoBehaviour&quot;</a>\nThat allows you to run a <xref href=\"GraphViewBehaviorTree.BehaviorTree\" data-throw-if-not-resolved=\"false\"></xref> in Unity.\n"
+  example: []
+  syntax:
+    content: 'public class BehaviorTreeRunner : MonoBehaviour'
+    content.vb: >-
+      Public Class BehaviorTreeRunner
+          Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: GraphViewBehaviorTree.BehaviorTreeRunner.tree
+  commentId: F:GraphViewBehaviorTree.BehaviorTreeRunner.tree
+  id: tree
+  parent: GraphViewBehaviorTree.BehaviorTreeRunner
+  langs:
+  - csharp
+  - vb
+  name: tree
+  nameWithType: BehaviorTreeRunner.tree
+  fullName: GraphViewBehaviorTree.BehaviorTreeRunner.tree
+  type: Field
+  source:
+    id: tree
+    path: ''
+    startLine: 916
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree
+  summary: "\nThe <xref href=\"GraphViewBehaviorTree.BehaviorTree\" data-throw-if-not-resolved=\"false\"></xref> to run.\n"
+  example: []
+  syntax:
+    content: public BehaviorTree tree
+    return:
+      type: GraphViewBehaviorTree.BehaviorTree
+    content.vb: Public tree As BehaviorTree
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: GraphViewBehaviorTree.BehaviorTree
+  commentId: T:GraphViewBehaviorTree.BehaviorTree
+  parent: GraphViewBehaviorTree
+  name: BehaviorTree
+  nameWithType: BehaviorTree
+  fullName: GraphViewBehaviorTree.BehaviorTree
+- uid: GraphViewBehaviorTree
+  commentId: N:GraphViewBehaviorTree
+  name: GraphViewBehaviorTree
+  nameWithType: GraphViewBehaviorTree
+  fullName: GraphViewBehaviorTree

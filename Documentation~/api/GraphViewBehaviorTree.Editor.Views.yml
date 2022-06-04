@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: GraphViewBehaviorTree.Editor.Views
+  commentId: N:GraphViewBehaviorTree.Editor.Views
+  id: GraphViewBehaviorTree.Editor.Views
+  children:
+  - GraphViewBehaviorTree.Editor.Views.BehaviorTreeNodeView
+  - GraphViewBehaviorTree.Editor.Views.BehaviorTreeView
+  - GraphViewBehaviorTree.Editor.Views.BehaviorTreeView.UxmlFactory
+  - GraphViewBehaviorTree.Editor.Views.SplitView
+  - GraphViewBehaviorTree.Editor.Views.SplitView.UxmlFactory
+  langs:
+  - csharp
+  - vb
+  name: GraphViewBehaviorTree.Editor.Views
+  nameWithType: GraphViewBehaviorTree.Editor.Views
+  fullName: GraphViewBehaviorTree.Editor.Views
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: GraphViewBehaviorTree.Editor.Views.BehaviorTreeNodeView
+  commentId: T:GraphViewBehaviorTree.Editor.Views.BehaviorTreeNodeView
+  name: BehaviorTreeNodeView
+  nameWithType: BehaviorTreeNodeView
+  fullName: GraphViewBehaviorTree.Editor.Views.BehaviorTreeNodeView
+- uid: GraphViewBehaviorTree.Editor.Views.BehaviorTreeView
+  commentId: T:GraphViewBehaviorTree.Editor.Views.BehaviorTreeView
+  name: BehaviorTreeView
+  nameWithType: BehaviorTreeView
+  fullName: GraphViewBehaviorTree.Editor.Views.BehaviorTreeView
+- uid: GraphViewBehaviorTree.Editor.Views.BehaviorTreeView.UxmlFactory
+  commentId: T:GraphViewBehaviorTree.Editor.Views.BehaviorTreeView.UxmlFactory
+  name: BehaviorTreeView.UxmlFactory
+  nameWithType: BehaviorTreeView.UxmlFactory
+  fullName: GraphViewBehaviorTree.Editor.Views.BehaviorTreeView.UxmlFactory
+- uid: GraphViewBehaviorTree.Editor.Views.SplitView
+  commentId: T:GraphViewBehaviorTree.Editor.Views.SplitView
+  name: SplitView
+  nameWithType: SplitView
+  fullName: GraphViewBehaviorTree.Editor.Views.SplitView
+- uid: GraphViewBehaviorTree.Editor.Views.SplitView.UxmlFactory
+  commentId: T:GraphViewBehaviorTree.Editor.Views.SplitView.UxmlFactory
+  name: SplitView.UxmlFactory
+  nameWithType: SplitView.UxmlFactory
+  fullName: GraphViewBehaviorTree.Editor.Views.SplitView.UxmlFactory

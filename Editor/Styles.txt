@@ -1,0 +1,68 @@
+.panel-header
+{
+    margin-left: 0;
+    padding-left: 10px
+}
+
+.failure #divider {
+    background-color: rgba(32, 11, 11, 0.8);
+    border-color: rgba(32, 11, 11, 0.8);
+}
+
+.failure #input {
+    background-color: rgba(73, 0, 0, 0.8);
+}
+
+.failure #output {
+    background-color: rgba(73, 0, 0, 0.8);
+}
+
+.failure #title {
+    background-color: rgba(101, 0, 0, 0.8);
+}
+
+.failure #description {
+    background-color: rgba(101, 0, 0, 0.8);
+}
+
+.running #divider {
+    background-color: rgba(255, 123, 0, 0.8);
+    border-color: rgba(255, 123, 0, 0.8);
+}
+
+.running #input {
+    background-color: rgba(255, 149, 0, 0.8);
+}
+
+.running #output {
+    background-color: rgba(255, 170, 0, 0.8);
+}
+
+.running #title {
+    background-color: rgba(255, 149, 0, 0.8);
+}
+
+.running #description {
+    background-color: rgba(255, 136, 0, 0.8);
+}
+
+.success #divider {
+    background-color: rgba(0, 66, 27, 0.8);
+    border-color: rgba(0, 66, 27, 0.8);
+}
+
+.success #input {
+    background-color: rgba(0, 83, 34, 0.8);
+}
+
+.success #output {
+    background-color: rgba(0, 83, 34, 0.8);
+}
+
+.success #title {
+    background-color: rgba(0, 75, 31, 0.8);
+}
+
+.success #description {
+    background-color: rgba(0, 75, 31, 0.8);
+}

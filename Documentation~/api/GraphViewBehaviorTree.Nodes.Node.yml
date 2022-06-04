@@ -1,0 +1,675 @@
+### YamlMime:ManagedReference
+items:
+- uid: GraphViewBehaviorTree.Nodes.Node
+  commentId: T:GraphViewBehaviorTree.Nodes.Node
+  id: Node
+  parent: GraphViewBehaviorTree.Nodes
+  children:
+  - GraphViewBehaviorTree.Nodes.Node.AddChild(GraphViewBehaviorTree.Nodes.Node)
+  - GraphViewBehaviorTree.Nodes.Node.Clone
+  - GraphViewBehaviorTree.Nodes.Node.GetChildren
+  - GraphViewBehaviorTree.Nodes.Node.guid
+  - GraphViewBehaviorTree.Nodes.Node.hasMultipleParents
+  - GraphViewBehaviorTree.Nodes.Node.IsStarted
+  - GraphViewBehaviorTree.Nodes.Node.nodeGraphPosition
+  - GraphViewBehaviorTree.Nodes.Node.NodeReset
+  - GraphViewBehaviorTree.Nodes.Node.OnStart
+  - GraphViewBehaviorTree.Nodes.Node.OnStop
+  - GraphViewBehaviorTree.Nodes.Node.OnUpdate
+  - GraphViewBehaviorTree.Nodes.Node.RemoveChild(GraphViewBehaviorTree.Nodes.Node)
+  - GraphViewBehaviorTree.Nodes.Node.state
+  - GraphViewBehaviorTree.Nodes.Node.Update
+  langs:
+  - csharp
+  - vb
+  name: Node
+  nameWithType: Node
+  fullName: GraphViewBehaviorTree.Nodes.Node
+  type: Class
+  source:
+    id: Node
+    path: ''
+    startLine: 954
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  summary: "\nBase class for all nodes in the Behavior tree.\n"
+  example: []
+  syntax:
+    content: >-
+      [Serializable]
+
+      public abstract class Node : ScriptableObject
+    content.vb: >-
+      <Serializable>
+
+      Public MustInherit Class Node
+          Inherits ScriptableObject
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - GraphViewBehaviorTree.Nodes.ActionNode
+  - GraphViewBehaviorTree.Nodes.CompositeNode
+  - GraphViewBehaviorTree.Nodes.DecoratorNode
+  attributes:
+  - type: System.SerializableAttribute
+    ctor: System.SerializableAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: GraphViewBehaviorTree.Nodes.Node.state
+  commentId: F:GraphViewBehaviorTree.Nodes.Node.state
+  id: state
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: state
+  nameWithType: Node.state
+  fullName: GraphViewBehaviorTree.Nodes.Node.state
+  type: Field
+  source:
+    id: state
+    path: ''
+    startLine: 981
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  example: []
+  syntax:
+    content: public Node.State state
+    return:
+      type: GraphViewBehaviorTree.Nodes.Node.State
+      description: "\nThe State the Node is in.\n"
+    content.vb: Public state As Node.State
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: GraphViewBehaviorTree.Nodes.Node.IsStarted
+  commentId: P:GraphViewBehaviorTree.Nodes.Node.IsStarted
+  id: IsStarted
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: IsStarted
+  nameWithType: Node.IsStarted
+  fullName: GraphViewBehaviorTree.Nodes.Node.IsStarted
+  type: Property
+  source:
+    id: IsStarted
+    path: ''
+    startLine: 991
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  example: []
+  syntax:
+    content: public bool IsStarted { get; protected set; }
+    parameters: []
+    return:
+      type: System.Boolean
+      description: "\nHas the node started.\n"
+    content.vb: Public Property IsStarted As Boolean
+  overload: GraphViewBehaviorTree.Nodes.Node.IsStarted*
+  modifiers.csharp:
+  - public
+  - get
+  - protected set
+  modifiers.vb:
+  - Public
+  - Get
+  - Protected Set
+- uid: GraphViewBehaviorTree.Nodes.Node.guid
+  commentId: F:GraphViewBehaviorTree.Nodes.Node.guid
+  id: guid
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: guid
+  nameWithType: Node.guid
+  fullName: GraphViewBehaviorTree.Nodes.Node.guid
+  type: Field
+  source:
+    id: guid
+    path: ''
+    startLine: 1000
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  example: []
+  syntax:
+    content: public string guid
+    return:
+      type: System.String
+      description: "\nThe GUID of the Node View, used to get the Node View that this Node is associated with.\n"
+    content.vb: Public guid As String
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: GraphViewBehaviorTree.Nodes.Node.nodeGraphPosition
+  commentId: F:GraphViewBehaviorTree.Nodes.Node.nodeGraphPosition
+  id: nodeGraphPosition
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: nodeGraphPosition
+  nameWithType: Node.nodeGraphPosition
+  fullName: GraphViewBehaviorTree.Nodes.Node.nodeGraphPosition
+  type: Field
+  source:
+    id: nodeGraphPosition
+    path: ''
+    startLine: 1005
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  example: []
+  syntax:
+    content: public Vector2 nodeGraphPosition
+    return:
+      type: Vector2
+      description: "\nThe Position in the Behavior Tree View that this Node is at.\n"
+    content.vb: Public nodeGraphPosition As Vector2
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: GraphViewBehaviorTree.Nodes.Node.hasMultipleParents
+  commentId: F:GraphViewBehaviorTree.Nodes.Node.hasMultipleParents
+  id: hasMultipleParents
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: hasMultipleParents
+  nameWithType: Node.hasMultipleParents
+  fullName: GraphViewBehaviorTree.Nodes.Node.hasMultipleParents
+  type: Field
+  source:
+    id: hasMultipleParents
+    path: ''
+    startLine: 1010
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  example: []
+  syntax:
+    content: public bool hasMultipleParents
+    return:
+      type: System.Boolean
+      description: "\nDoes this node have more then one parent.\n"
+    content.vb: Public hasMultipleParents As Boolean
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: GraphViewBehaviorTree.Nodes.Node.OnStart
+  commentId: M:GraphViewBehaviorTree.Nodes.Node.OnStart
+  id: OnStart
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: OnStart()
+  nameWithType: Node.OnStart()
+  fullName: GraphViewBehaviorTree.Nodes.Node.OnStart()
+  type: Method
+  source:
+    id: OnStart
+    path: ''
+    startLine: 1018
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  summary: "\nRuns when the Node first starts running.\nInitialize the Node.\n"
+  example: []
+  syntax:
+    content: protected abstract void OnStart()
+    content.vb: Protected MustOverride Sub OnStart
+  overload: GraphViewBehaviorTree.Nodes.Node.OnStart*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: GraphViewBehaviorTree.Nodes.Node.OnStop
+  commentId: M:GraphViewBehaviorTree.Nodes.Node.OnStop
+  id: OnStop
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: OnStop()
+  nameWithType: Node.OnStop()
+  fullName: GraphViewBehaviorTree.Nodes.Node.OnStop()
+  type: Method
+  source:
+    id: OnStop
+    path: ''
+    startLine: 1024
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  summary: "\nRuns when the Node Stops.\nAny Cleanup that the Node may need to do.\n"
+  example: []
+  syntax:
+    content: protected abstract void OnStop()
+    content.vb: Protected MustOverride Sub OnStop
+  overload: GraphViewBehaviorTree.Nodes.Node.OnStop*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: GraphViewBehaviorTree.Nodes.Node.OnUpdate
+  commentId: M:GraphViewBehaviorTree.Nodes.Node.OnUpdate
+  id: OnUpdate
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: OnUpdate()
+  nameWithType: Node.OnUpdate()
+  fullName: GraphViewBehaviorTree.Nodes.Node.OnUpdate()
+  type: Method
+  source:
+    id: OnUpdate
+    path: ''
+    startLine: 1030
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  summary: "\nRuns every Update of the Node.\n"
+  example: []
+  syntax:
+    content: protected abstract Node.State OnUpdate()
+    return:
+      type: GraphViewBehaviorTree.Nodes.Node.State
+      description: The State the Node is in once it finishes Updating.
+    content.vb: Protected MustOverride Function OnUpdate As Node.State
+  overload: GraphViewBehaviorTree.Nodes.Node.OnUpdate*
+  modifiers.csharp:
+  - protected
+  - abstract
+  modifiers.vb:
+  - Protected
+  - MustOverride
+- uid: GraphViewBehaviorTree.Nodes.Node.AddChild(GraphViewBehaviorTree.Nodes.Node)
+  commentId: M:GraphViewBehaviorTree.Nodes.Node.AddChild(GraphViewBehaviorTree.Nodes.Node)
+  id: AddChild(GraphViewBehaviorTree.Nodes.Node)
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: AddChild(Node)
+  nameWithType: Node.AddChild(Node)
+  fullName: GraphViewBehaviorTree.Nodes.Node.AddChild(GraphViewBehaviorTree.Nodes.Node)
+  type: Method
+  source:
+    id: AddChild
+    path: ''
+    startLine: 1040
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  summary: "\nAdd the child node to this node.\n"
+  example: []
+  syntax:
+    content: public virtual void AddChild(Node childNode)
+    parameters:
+    - id: childNode
+      type: GraphViewBehaviorTree.Nodes.Node
+      description: The Node to add as a Child.
+    content.vb: Public Overridable Sub AddChild(childNode As Node)
+  overload: GraphViewBehaviorTree.Nodes.Node.AddChild*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: GraphViewBehaviorTree.Nodes.Node.RemoveChild(GraphViewBehaviorTree.Nodes.Node)
+  commentId: M:GraphViewBehaviorTree.Nodes.Node.RemoveChild(GraphViewBehaviorTree.Nodes.Node)
+  id: RemoveChild(GraphViewBehaviorTree.Nodes.Node)
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: RemoveChild(Node)
+  nameWithType: Node.RemoveChild(Node)
+  fullName: GraphViewBehaviorTree.Nodes.Node.RemoveChild(GraphViewBehaviorTree.Nodes.Node)
+  type: Method
+  source:
+    id: RemoveChild
+    path: ''
+    startLine: 1046
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  summary: "\nRemove a Child from the Node.\n"
+  example: []
+  syntax:
+    content: public virtual void RemoveChild(Node childNode)
+    parameters:
+    - id: childNode
+      type: GraphViewBehaviorTree.Nodes.Node
+      description: The Child to remove.
+    content.vb: Public Overridable Sub RemoveChild(childNode As Node)
+  overload: GraphViewBehaviorTree.Nodes.Node.RemoveChild*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: GraphViewBehaviorTree.Nodes.Node.GetChildren
+  commentId: M:GraphViewBehaviorTree.Nodes.Node.GetChildren
+  id: GetChildren
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: GetChildren()
+  nameWithType: Node.GetChildren()
+  fullName: GraphViewBehaviorTree.Nodes.Node.GetChildren()
+  type: Method
+  source:
+    id: GetChildren
+    path: ''
+    startLine: 1052
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  summary: "\nGet a list of children the node contains.\n"
+  example: []
+  syntax:
+    content: public virtual List<Node> GetChildren()
+    return:
+      type: List{GraphViewBehaviorTree.Nodes.Node}
+      description: A list of children Nodes.
+    content.vb: Public Overridable Function GetChildren As List(Of Node)
+  overload: GraphViewBehaviorTree.Nodes.Node.GetChildren*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: GraphViewBehaviorTree.Nodes.Node.NodeReset
+  commentId: M:GraphViewBehaviorTree.Nodes.Node.NodeReset
+  id: NodeReset
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: NodeReset()
+  nameWithType: Node.NodeReset()
+  fullName: GraphViewBehaviorTree.Nodes.Node.NodeReset()
+  type: Method
+  source:
+    id: NodeReset
+    path: ''
+    startLine: 1065
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  summary: "\nReset the Node.\nCalls all Nodes children to Reset.\nIf the Node is Started calls OnStop() then sets started to false.\nSet the State to running.\n"
+  example: []
+  syntax:
+    content: public virtual void NodeReset()
+    content.vb: Public Overridable Sub NodeReset
+  overload: GraphViewBehaviorTree.Nodes.Node.NodeReset*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: GraphViewBehaviorTree.Nodes.Node.Update
+  commentId: M:GraphViewBehaviorTree.Nodes.Node.Update
+  id: Update
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: Update()
+  nameWithType: Node.Update()
+  fullName: GraphViewBehaviorTree.Nodes.Node.Update()
+  type: Method
+  source:
+    id: Update
+    path: ''
+    startLine: 1087
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  summary: "\nUpdate the Node.\n"
+  example: []
+  syntax:
+    content: public Node.State Update()
+    return:
+      type: GraphViewBehaviorTree.Nodes.Node.State
+      description: The state that the Node is in.
+    content.vb: Public Function Update As Node.State
+  overload: GraphViewBehaviorTree.Nodes.Node.Update*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: GraphViewBehaviorTree.Nodes.Node.Clone
+  commentId: M:GraphViewBehaviorTree.Nodes.Node.Clone
+  id: Clone
+  parent: GraphViewBehaviorTree.Nodes.Node
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Node.Clone()
+  fullName: GraphViewBehaviorTree.Nodes.Node.Clone()
+  type: Method
+  source:
+    id: Clone
+    path: ''
+    startLine: 1121
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Nodes
+  summary: "\nClone the Node.\n"
+  example: []
+  syntax:
+    content: public Node Clone()
+    return:
+      type: GraphViewBehaviorTree.Nodes.Node
+      description: A Clone of the Node.
+    content.vb: Public Function Clone As Node
+  overload: GraphViewBehaviorTree.Nodes.Node.Clone*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: GraphViewBehaviorTree.Nodes
+  commentId: N:GraphViewBehaviorTree.Nodes
+  name: GraphViewBehaviorTree.Nodes
+  nameWithType: GraphViewBehaviorTree.Nodes
+  fullName: GraphViewBehaviorTree.Nodes
+- uid: GraphViewBehaviorTree.Nodes.Node.State
+  commentId: T:GraphViewBehaviorTree.Nodes.Node.State
+  parent: GraphViewBehaviorTree.Nodes
+  name: Node.State
+  nameWithType: Node.State
+  fullName: GraphViewBehaviorTree.Nodes.Node.State
+- uid: GraphViewBehaviorTree.Nodes.Node.IsStarted*
+  commentId: Overload:GraphViewBehaviorTree.Nodes.Node.IsStarted
+  name: IsStarted
+  nameWithType: Node.IsStarted
+  fullName: GraphViewBehaviorTree.Nodes.Node.IsStarted
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Vector2
+  commentId: '!:Vector2'
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: Vector2
+- uid: GraphViewBehaviorTree.Nodes.Node.OnStart*
+  commentId: Overload:GraphViewBehaviorTree.Nodes.Node.OnStart
+  name: OnStart
+  nameWithType: Node.OnStart
+  fullName: GraphViewBehaviorTree.Nodes.Node.OnStart
+- uid: GraphViewBehaviorTree.Nodes.Node.OnStop*
+  commentId: Overload:GraphViewBehaviorTree.Nodes.Node.OnStop
+  name: OnStop
+  nameWithType: Node.OnStop
+  fullName: GraphViewBehaviorTree.Nodes.Node.OnStop
+- uid: GraphViewBehaviorTree.Nodes.Node.OnUpdate*
+  commentId: Overload:GraphViewBehaviorTree.Nodes.Node.OnUpdate
+  name: OnUpdate
+  nameWithType: Node.OnUpdate
+  fullName: GraphViewBehaviorTree.Nodes.Node.OnUpdate
+- uid: GraphViewBehaviorTree.Nodes.Node.AddChild*
+  commentId: Overload:GraphViewBehaviorTree.Nodes.Node.AddChild
+  name: AddChild
+  nameWithType: Node.AddChild
+  fullName: GraphViewBehaviorTree.Nodes.Node.AddChild
+- uid: GraphViewBehaviorTree.Nodes.Node
+  commentId: T:GraphViewBehaviorTree.Nodes.Node
+  parent: GraphViewBehaviorTree.Nodes
+  name: Node
+  nameWithType: Node
+  fullName: GraphViewBehaviorTree.Nodes.Node
+- uid: GraphViewBehaviorTree.Nodes.Node.RemoveChild*
+  commentId: Overload:GraphViewBehaviorTree.Nodes.Node.RemoveChild
+  name: RemoveChild
+  nameWithType: Node.RemoveChild
+  fullName: GraphViewBehaviorTree.Nodes.Node.RemoveChild
+- uid: GraphViewBehaviorTree.Nodes.Node.GetChildren*
+  commentId: Overload:GraphViewBehaviorTree.Nodes.Node.GetChildren
+  name: GetChildren
+  nameWithType: Node.GetChildren
+  fullName: GraphViewBehaviorTree.Nodes.Node.GetChildren
+- uid: List{GraphViewBehaviorTree.Nodes.Node}
+  commentId: '!:List{GraphViewBehaviorTree.Nodes.Node}'
+  definition: List`1
+  name: List<Node>
+  nameWithType: List<Node>
+  fullName: List<GraphViewBehaviorTree.Nodes.Node>
+  nameWithType.vb: List(Of Node)
+  fullName.vb: List(Of GraphViewBehaviorTree.Nodes.Node)
+  name.vb: List(Of Node)
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: GraphViewBehaviorTree.Nodes.Node
+    name: Node
+    nameWithType: Node
+    fullName: GraphViewBehaviorTree.Nodes.Node
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: GraphViewBehaviorTree.Nodes.Node
+    name: Node
+    nameWithType: Node
+    fullName: GraphViewBehaviorTree.Nodes.Node
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: List`1
+  isExternal: true
+  name: List<>
+  nameWithType: List<>
+  fullName: List<>
+  nameWithType.vb: List(Of )
+  fullName.vb: List(Of )
+  name.vb: List(Of )
+  spec.csharp:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: List`1
+    name: List
+    nameWithType: List
+    fullName: List
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: GraphViewBehaviorTree.Nodes.Node.NodeReset*
+  commentId: Overload:GraphViewBehaviorTree.Nodes.Node.NodeReset
+  name: NodeReset
+  nameWithType: Node.NodeReset
+  fullName: GraphViewBehaviorTree.Nodes.Node.NodeReset
+- uid: GraphViewBehaviorTree.Nodes.Node.Update*
+  commentId: Overload:GraphViewBehaviorTree.Nodes.Node.Update
+  name: Update
+  nameWithType: Node.Update
+  fullName: GraphViewBehaviorTree.Nodes.Node.Update
+- uid: GraphViewBehaviorTree.Nodes.Node.Clone*
+  commentId: Overload:GraphViewBehaviorTree.Nodes.Node.Clone
+  name: Clone
+  nameWithType: Node.Clone
+  fullName: GraphViewBehaviorTree.Nodes.Node.Clone

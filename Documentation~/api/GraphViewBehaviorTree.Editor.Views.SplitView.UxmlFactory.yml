@@ -1,0 +1,47 @@
+### YamlMime:ManagedReference
+items:
+- uid: GraphViewBehaviorTree.Editor.Views.SplitView.UxmlFactory
+  commentId: T:GraphViewBehaviorTree.Editor.Views.SplitView.UxmlFactory
+  id: SplitView.UxmlFactory
+  parent: GraphViewBehaviorTree.Editor.Views
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: SplitView.UxmlFactory
+  nameWithType: SplitView.UxmlFactory
+  fullName: GraphViewBehaviorTree.Editor.Views.SplitView.UxmlFactory
+  type: Class
+  source:
+    id: UxmlFactory
+    path: ''
+    startLine: 705
+  assemblies:
+  - cs.temp.dll
+  namespace: GraphViewBehaviorTree.Editor.Views
+  summary: "\nRequired in order to have <xref href=\"GraphViewBehaviorTree.Editor.Views.SplitView\" data-throw-if-not-resolved=\"false\"></xref> show up in the UI Builder Library.\n"
+  example: []
+  syntax:
+    content: 'public class UxmlFactory : SplitView.UxmlFactory<SplitView, UxmlTraits>'
+    content.vb: >-
+      Public Class UxmlFactory
+          Inherits SplitView.UxmlFactory(Of SplitView, UxmlTraits)
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+references:
+- uid: GraphViewBehaviorTree.Editor.Views.SplitView
+  commentId: T:GraphViewBehaviorTree.Editor.Views.SplitView
+  name: SplitView
+  nameWithType: SplitView
+  fullName: GraphViewBehaviorTree.Editor.Views.SplitView
+- uid: GraphViewBehaviorTree.Editor.Views
+  commentId: N:GraphViewBehaviorTree.Editor.Views
+  name: GraphViewBehaviorTree.Editor.Views
+  nameWithType: GraphViewBehaviorTree.Editor.Views
+  fullName: GraphViewBehaviorTree.Editor.Views

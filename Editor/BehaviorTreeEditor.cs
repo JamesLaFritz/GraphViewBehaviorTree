@@ -1,5 +1,5 @@
-using System;
-using System.Linq;
+using GraphViewBehaviorTree.Editor.Views;
+using GraphViewBehaviorTree.Nodes;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEditor.UIElements;
@@ -9,14 +9,19 @@ using UnityEngine.UIElements;
 namespace GraphViewBehaviorTree.Editor
 {
     /// <summary>
-    /// Derive from <see cref="EditorWindow"/> class to create an editor window to Edit Behavior Tree Scriptable Objects.
+    /// Derive from <a href="https://docs.unity3d.com/2021.3/Documentation/ScriptReference/EditorWindow.html" rel="external">UnityEditor.EditorWindow</a> class to create an editor window to Edit Behavior Tree Scriptable Objects.
     /// Requires file named "BehaviorTreeEditor.uxml" to be in an Editor Resources Folder
-    /// Uses Visual Elements requires a <see cref="BehaviorTreeView"/> an an <see cref="IMGUIContainer"/> with a name of InspectorView.
+    /// Uses Visual Elements requires a <see cref="BehaviorTreeView"/> an an <a href="https://docs.unity3d.com/ScriptReference/UIElements.IMGUIContainer.html" rel="external">UnityEngine.UIElements.IMGUIContainer</a> with a name of InspectorView.
     /// </summary>
     public class BehaviorTreeEditor : EditorWindow
     {
+        /// <value> The <see cref="TreeView"/> associated with this view. </value>
         private BehaviorTreeView m_treeView;
+
+        /// <value> The <a href="https://docs.unity3d.com/ScriptReference/UIElements.IMGUIContainer.html" rel="external">UnityEngine.UIElements.IMGUIContainer</a> associated with the view. </value>
         private IMGUIContainer m_inspectorView;
+
+        /// <value> The <a href="https://docs.unity3d.com/2021.3/Documentation/ScriptReference/Editor.html" rel="external">UnityEditor.Editor</a> associated with this view. </value>
         private UnityEditor.Editor m_editor;
 
         /// <summary>
@@ -46,7 +51,7 @@ namespace GraphViewBehaviorTree.Editor
         ///
         /// Clones a Visual Tree Located in an Editor Resources Folder BehaviorTreeEditor.uxml";
         /// </summary>
-        public void CreateGUI()
+        private void CreateGUI()
         {
             //VisualTreeAsset visualTree = Resources.Load<VisualTreeAsset>("BehaviorTreeEditor.uxml");
             VisualTreeAsset vt = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/GraphViewBehaviorTree/Editor/Resources/BehaviorTreeEditor.uxml");
@@ -59,34 +64,29 @@ namespace GraphViewBehaviorTree.Editor
             OnSelectionChange();
         }
 
+        /// <summary>
+        /// This function is called when the object is loaded.
+        /// </summary>
         private void OnEnable()
         {
             EditorApplication.playModeStateChanged -= OnplayModeStateChanged;
             EditorApplication.playModeStateChanged += OnplayModeStateChanged;
         }
 
+        /// <summary>
+        /// This function is called when the scriptable object goes out of scope.
+        /// </summary>
         private void OnDisable()
         {
             EditorApplication.playModeStateChanged -= OnplayModeStateChanged;
         }
 
-        private void OnplayModeStateChanged(PlayModeStateChange obj)
+        /// <summary>
+        /// OnInspectorUpdate is called at 10 frames per second to give the inspector a chance to update.
+        /// </summary>
+        private void OnInspectorUpdate()
         {
-            switch (obj)
-            {
-                case PlayModeStateChange.EnteredEditMode:
-                    OnSelectionChange();
-                    break;
-                case PlayModeStateChange.ExitingEditMode:
-                    break;
-                case PlayModeStateChange.EnteredPlayMode:
-                    OnSelectionChange();
-                    break;
-                case PlayModeStateChange.ExitingPlayMode:
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(obj), obj, null);
-            }
+            m_treeView?.UpdateNodeStates();
         }
 
         /// <summary>
@@ -132,6 +132,31 @@ namespace GraphViewBehaviorTree.Editor
         }
 
         /// <summary>
+        /// Method registered to <a href="https://docs.unity3d.com/2021.3/Documentation/ScriptReference/EditorApplication-playModeStateChanged.html" rel="external">UnityEditor.EditorApplication.playModeStateChanged</a>
+        /// </summary>
+        /// <param name="obj">The <a href="https://docs.unity3d.com/2021.3/Documentation/ScriptReference/PlayModeStateChange.html" rel="external">UnityEditor.PlayModeStateChange</a> object.</param>
+        private void OnplayModeStateChanged(PlayModeStateChange obj)
+        {
+            switch (obj)
+            {
+                // Occurs during the next update of the Editor application if it is in edit mode and was previously in play mode.
+                case PlayModeStateChange.EnteredEditMode:
+                    OnSelectionChange();
+                    break;
+                // Occurs when exiting edit mode, before the Editor is in play mode.
+                case PlayModeStateChange.ExitingEditMode:
+                    break;
+                // Occurs during the next update of the Editor application if it is in play mode and was previously in edit mode.
+                case PlayModeStateChange.EnteredPlayMode:
+                    OnSelectionChange();
+                    break;
+                // Occurs when exiting play mode, before the Editor is in edit mode.
+                case PlayModeStateChange.ExitingPlayMode:
+                    break;
+            }
+        }
+
+        /// <summary>
         /// Used to Observer the tree view for when a Node is Selected.
         /// Causes the Node to display in the Inspector View.
         /// </summary>
@@ -146,11 +171,6 @@ namespace GraphViewBehaviorTree.Editor
                 if (m_editor.target)
                     m_editor.OnInspectorGUI();
             };
-        }
-
-        public void OnInspectorUpdate()
-        {
-            m_treeView?.UpdateNodeStates();
         }
     }
 }
