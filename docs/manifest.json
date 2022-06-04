@@ -393,11 +393,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/README.md",
+      "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "articles/README.html",
-          "hash": "pG2YatuhGQQUtzW574AOagsZKY+3K3sSKmfLozUyr5M="
+          "relative_path": "index.html",
+          "hash": "jXkKbNULGO0YfXYRp081aI5PJRGVtMThx60In/CJu1w="
         }
       },
       "is_incremental": false,
@@ -409,7 +409,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "hnecp9mF/1hcrQ/UDsPy4FD85jqNy8lr2E8Ue4zHM6c="
+          "hash": "DK8pw3eV/0BgNPamLeNLz8vv4VfTUxeibb/e+OgH+8s="
         }
       },
       "is_incremental": false,
@@ -429,7 +429,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 4,
-          "skipped_file_count": 2
+          "skipped_file_count": 3
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
