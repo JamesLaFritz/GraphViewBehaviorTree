@@ -1,6 +1,3 @@
-/Documentation~/docfx.json
-/Documentation~/toc.yml
-/Documentation~/articles/README.md
-/Documentation~/obj/**
+/Documentation~/**
 **/obj/**
 **/obj.meta
