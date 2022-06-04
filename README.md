@@ -110,6 +110,8 @@ Each Node can return one of three states Running, Success, or Failure.
 All nodes will be saved in Unity as Scriptable Objects. A Behavior tree will be a Scriptable Object containing all the
 Nodes in it.
 
+[Documentation](https://jameslafritz.github.io/GraphViewBehaviorTree/api/GraphViewBehaviorTree.html)
+
 #### Decorator Node
 * Has one child and is capable of augmenting the return state of it's child. This uses the [Decorator
 pattern](https://blog.devgenius.io/the-decorator-pattern-in-unity-6791ab10b64).
