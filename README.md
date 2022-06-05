@@ -158,13 +158,15 @@ see [Creating custom packages for use in Unity](https://blog.devgenius.io/creati
 
 [Using Unity’s UI Builder: Serialized Object data binding](https://blog.devgenius.io/using-unitys-ui-builder-bc058e1c7d17)
 
-[]()
+[Using Unity’s UI Builder: Adding Custom Controls](https://blog.devgenius.io/using-unitys-ui-builder-5e793a90a5ae)
 
-[]()
+[Using Unity’s Graph View: Adding and Deleting Nodes](https://blog.devgenius.io/using-unitys-graph-view-e9fb8e78980e)
 
-[]()
+[Using Unity’s Graph View: Node Position, Code/Editor Window Reload](https://ktmarine1999.medium.com/using-unitys-graph-view-18b38a23dea5)
 
-[]()
+[Using Unity’s Graph View: Connecting Nodes in The Editor](https://ktmarine1999.medium.com/4cc55b704548)
+
+[Inspector View in an Editor Window](https://medium.com/@ktmarine1999/inspector-view-in-an-editor-window-5debd86cbe6f)
 
 
 
