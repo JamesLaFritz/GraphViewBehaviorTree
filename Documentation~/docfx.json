@@ -35,13 +35,6 @@
         "dest": "articles/"
       },
       {
-        "src": "../",
-        "files": [
-          "README.md"
-        ],
-        "dest": "index"
-      },
-      {
         "files": ["**/toc.yml", "**.md"],
         "exclude": [
           "_site/**",

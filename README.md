@@ -168,9 +168,6 @@ see [Creating custom packages for use in Unity](https://blog.devgenius.io/creati
 
 [Inspector View in an Editor Window](https://medium.com/@ktmarine1999/inspector-view-in-an-editor-window-5debd86cbe6f)
 
-Help Me
-
-
 
 <!-- ROADMAP -->
 ## Roadmap
