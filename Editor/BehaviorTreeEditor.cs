@@ -54,7 +54,7 @@ namespace GraphViewBehaviorTree.Editor
         private void CreateGUI()
         {
             //VisualTreeAsset visualTree = Resources.Load<VisualTreeAsset>("BehaviorTreeEditor.uxml");
-            VisualTreeAsset vt = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/GraphViewBehaviorTree/Editor/Resources/BehaviorTreeEditor.uxml");
+            VisualTreeAsset vt = Resources.Load<VisualTreeAsset>("BehaviorTreeEditor");
             vt.CloneTree(rootVisualElement);
 
             m_treeView = rootVisualElement.Q<BehaviorTreeView>();
