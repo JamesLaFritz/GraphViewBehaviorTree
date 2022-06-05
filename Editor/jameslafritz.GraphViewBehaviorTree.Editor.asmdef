@@ -1,5 +1,5 @@
 {
-    "name": "jameslafritz.GraphViewBehaviorTree.Editor",
+    "name": "jameslafritz.graphviewbehaviortree.editor",
     "rootNamespace": "GraphViewBehaviorTree.Editor",
     "references": [
         "GUID:0bfbb1bb60202024991fa3f551e4c375"
@@ -9,7 +9,7 @@
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": false,
+    "overrideReferences": true,
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],

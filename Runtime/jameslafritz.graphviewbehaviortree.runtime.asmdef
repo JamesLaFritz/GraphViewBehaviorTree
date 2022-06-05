@@ -1,5 +1,5 @@
 {
-    "name": "jameslafritz.GraphViewBehaviorTree",
+    "name": "jameslafritz.graphviewbehaviortree.runtime",
     "rootNamespace": "GraphViewBehaviorTree",
     "references": [],
     "includePlatforms": [],
